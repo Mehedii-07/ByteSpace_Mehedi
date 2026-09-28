@@ -800,6 +800,33 @@
   background-color: #ffffff;
 }
 
+.courses-section .section-header {
+  text-align: center;
+  margin: 0 auto 40px auto;
+}
+
+.courses-section .section-title {
+  width: 100%;
+  max-width: 588px;
+  min-height: 106px;
+  margin: 0 auto 16px auto;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #000000;
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .courses-section .section-title {
+    font-size: 32px;
+    min-height: auto;
+  }
+}
+
 /* 3-Row Filter Pills Cloud matching Figma slice_2 */
 .figma-filters-cloud {
   display: flex;

@@ -25,7 +25,7 @@ export const PartnerLogos = () => {
     {
       id: 5,
       name: 'Logoipsum',
-      logo: '/images/partners/partner-logo-1png'
+      logo: '/images/partners/partner-logo-4.png'
     }
   ];
 

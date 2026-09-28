@@ -17,9 +17,15 @@ export const Hero = ({ onSearch }) => {
 
   return (
     <section id="home" className="hero-section bg-grid-pattern">
-      {/* 3D Decorative Doodles matching Figma assets */}
+      {/* Background blend light layers matching Figma specs */}
+      <div className="hero-blend-layer-1" aria-hidden="true"></div>
+      <div className="hero-blend-layer-2" aria-hidden="true"></div>
+
+      {/* 3D Decorative Doodles & Ellips7 matching Figma assets */}
       <div className="hero-decorations" aria-hidden="true">
         <div className="hero-decorations-wrapper">
+          {/* Ellips7 Arch: width: 1149px, height: 1149px, top: 582px, left: 145px, border: 320px solid #CBFC01 */}
+          <div className="hero-ellipse-7" aria-hidden="true"></div>
           {/* Top-Left Lime Squiggle */}
           <img
             src="/images/decorations/lime_squiggle_top_left.png"
@@ -93,11 +99,8 @@ export const Hero = ({ onSearch }) => {
           </form>
         </div>
 
-        {/* Hero Graphic Showcase with Giant Arch and Badges */}
+        {/* Hero Graphic Showcase with Badges */}
         <div className="hero-showcase">
-          {/* Lime Geometric Arch Backdrop */}
-          <div className="hero-arch-backdrop"></div>
-
           {/* Student Cutout Image matching user uploaded cutout */}
           <div className="hero-image-wrapper">
             <img

@@ -310,55 +310,114 @@
   pointer-events: none;
 }
 
+/* Figma Blend Layers */
+.hero-blend-layer-1 {
+  position: absolute;
+  width: 2500px;
+  height: 386.79px;
+  top: -0.8px;
+  left: -1077px;
+  transform: rotate(0deg);
+  opacity: 1;
+  mix-blend-mode: hard-light;
+  background: #D4FB20;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-blend-layer-2 {
+  position: absolute;
+  width: 2500px;
+  height: 371.83px;
+  top: -0.8px;
+  left: -1085.12px;
+  transform: rotate(0deg);
+  opacity: 1;
+  mix-blend-mode: hard-light;
+  background: #D4FB20;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Figma Ellips7 Arch:
+   width: 1149; height: 1149; top: 582px; left: 145px; angle: 0deg; opacity: 1; border-width: 320px; border: 320px solid #CBFC01;
+*/
+.hero-ellipse-7 {
+  position: absolute;
+  width: 1149px;
+  height: 1149px;
+  top: 582px;
+  left: 145px;
+  border-width: 320px;
+  border: 320px solid #CBFC01;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transform: rotate(0deg);
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Top-Left Lime Squiggle */
 .decor-top-left {
   top: 65px;
   left: -15px;
-  width: 155px;
+  width: 165px;
   height: auto;
+  z-index: 3;
 }
 
 /* Mid-Left White Zigzag */
 .decor-mid-left {
   top: 360px;
   left: 175px;
-  width: 90px;
+  width: 95px;
   height: auto;
+  z-index: 3;
 }
 
-/* Lower-Left Large White 3D Torus */
+/* Cone / Lower-Left Large White 3D Torus (exact Figma specs):
+   width: 342; height: 342; top: 682px; left: 18px; angle: 0deg; opacity: 1;
+*/
 .decor-torus {
-  top: 520px;
-  left: 40px;
-  width: 195px;
-  height: auto;
+  top: 682px;
+  left: 18px;
+  width: 342px;
+  height: 342px;
+  object-fit: contain;
+  transform: rotate(0deg);
+  opacity: 1;
+  z-index: 4;
 }
 
 /* Top-Right Neon Cylinder */
 .decor-cylinder {
   top: 30px;
   right: -25px;
-  width: 145px;
+  width: 155px;
   height: auto;
+  z-index: 3;
 }
 
-/* Mid-Right White 3D Cone (exact user specs: width: 188, height: 188, top: 464px, left: 1106px, angle: 0deg, opacity: 1) */
+/* Mid-Right White 3D Cone matching Figma */
 .decor-cone {
-  top: 464px;
+  top: 440px;
   left: 1106px;
   width: 188px;
   height: 188px;
   object-fit: contain;
   transform: rotate(0deg);
   opacity: 1;
+  z-index: 4;
 }
 
 /* Bottom-Right White Coil */
 .decor-bottom-right {
-  top: 520px;
+  top: 530px;
   right: 50px;
-  width: 150px;
+  width: 155px;
   height: auto;
+  z-index: 3;
 }
 
 .hero-container {
@@ -487,32 +546,20 @@
 .hero-showcase {
   position: relative;
   width: 100%;
-  max-width: 760px;
-  margin: 10px auto 0 auto;
+  max-width: 960px;
+  margin: 20px auto 0 auto;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 480px;
-}
-
-/* Neon Lime Curved Arch matching Figma */
-.hero-arch-backdrop {
-  position: absolute;
-  bottom: 0;
-  width: 580px;
-  height: 330px;
-  background: var(--neon-lime);
-  border-top-left-radius: 290px;
-  border-top-right-radius: 290px;
-  z-index: 1;
-  box-shadow: 0 0 50px rgba(204, 255, 0, 0.35);
+  height: 520px;
+  z-index: 3;
 }
 
 .hero-image-wrapper {
   position: relative;
-  z-index: 2;
-  width: 480px;
-  height: 460px;
+  z-index: 3;
+  width: 530px;
+  height: 510px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -543,10 +590,10 @@
   transform: translateY(-4px) scale(1.02);
 }
 
-/* Badge 1: UI/UX Design */
+/* Badge 1: UI/UX Design (Left of student's face) */
 .badge-ui-design {
-  top: 150px;
-  left: 20px;
+  top: 110px;
+  left: 90px;
 }
 
 .badge-category-title {
@@ -564,10 +611,10 @@
   color: #64748b;
 }
 
-/* Badge 2: Learning Progress 55% */
+/* Badge 2: Learning Progress 55% (Right of student's face) */
 .badge-learning-progress {
-  top: 120px;
-  right: 20px;
+  top: 130px;
+  right: 90px;
   width: 185px;
 }
 

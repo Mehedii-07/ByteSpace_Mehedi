@@ -17,9 +17,9 @@ export const Hero = ({ onSearch }) => {
 
   return (
     <section id="home" className="hero-section bg-grid-pattern">
-      {/* Background blend light layers matching Figma specs */}
-      <div className="hero-blend-layer-1" aria-hidden="true"></div>
-      <div className="hero-blend-layer-2" aria-hidden="true"></div>
+      {/* Figma Rectangle & Rectangle 15 */}
+      <div className="hero-rectangle-bg" aria-hidden="true"></div>
+      <div className="hero-rectangle-15" aria-hidden="true"></div>
 
       {/* 3D Decorative Doodles & Ellips7 matching Figma assets */}
       <div className="hero-decorations" aria-hidden="true">
@@ -30,43 +30,60 @@ export const Hero = ({ onSearch }) => {
           <img
             src="/images/decorations/lime_squiggle_top_left.png"
             alt=""
-            className="hero-decor decor-top-left animate-float"
+            className="hero-decor decor-top-left"
           />
 
           {/* Mid-Left White Zigzag */}
           <img
             src="/images/decorations/white_zigzag_mid_left.png"
             alt=""
-            className="hero-decor decor-mid-left animate-float-reverse"
+            className="hero-decor decor-mid-left"
           />
 
           {/* Lower-Left Large White 3D Torus */}
           <img
             src="/images/decorations/white_torus_bottom_left.png"
             alt=""
-            className="hero-decor decor-torus animate-float"
+            className="hero-decor decor-torus"
           />
 
           {/* Top-Right Neon Cylinder */}
           <img
             src="/images/decorations/lime_cylinder_top_right.png"
             alt=""
-            className="hero-decor decor-cylinder animate-float"
+            className="hero-decor decor-cylinder"
           />
 
-          {/* Cone matching Figma: width: 188px; height: 188px; top: 464px; left: 1106px; angle: 0 deg; opacity: 1 */}
+          {/* Cone matching Figma */}
           <img
             src="/images/decorations/white_cone.png"
             alt=""
-            className="hero-decor decor-cone animate-float-reverse"
+            className="hero-decor decor-cone"
           />
 
           {/* Bottom-Right White Coil */}
           <img
             src="/images/decorations/white_coil_bottom_right.png"
             alt=""
-            className="hero-decor decor-bottom-right animate-float"
+            className="hero-decor decor-bottom-right"
           />
+
+          {/* Happy student where written (exact Figma specs: width: 258, height: 121, top: 837px, left: 328px) */}
+          <div className="hero-badge badge-bottom-left">
+            <div className="badge-text-title">Happy Students</div>
+            <div className="badge-students-rating">
+              <span className="rating-score">4.5</span>
+              <span className="rating-reviews">(240)</span>
+              <span className="rating-star">★</span>
+            </div>
+            <div className="badge-avatars-row">
+              <img src="/images/avatar-emily.jpg" alt="Student" className="badge-avatar" />
+              <img src="/images/avatar-james.jpg" alt="Student" className="badge-avatar" />
+              <img src="/images/avatar-michael.jpg" alt="Student" className="badge-avatar" />
+              <img src="/images/workshop-meeting.jpg" alt="Student" className="badge-avatar" />
+              <div className="badge-avatar-more badge-avatar-lime">2K+</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -111,36 +128,19 @@ export const Hero = ({ onSearch }) => {
           </div>
 
           {/* Floating Badge 1: Top-Left (UI/UX Design matching screenshot) */}
-          <div className="hero-badge badge-ui-design animate-float">
+          <div className="hero-badge badge-ui-design">
             <span className="badge-category-title">UI/UX Design</span>
             <span className="badge-category-stats">200 Courses • 1000+ Students</span>
           </div>
 
           {/* Floating Badge 2: Top-Right (Learning Progress 55% matching screenshot) */}
-          <div className="hero-badge badge-learning-progress animate-float-reverse">
+          <div className="hero-badge badge-learning-progress ">
             <div className="badge-progress-header">
               <span className="badge-progress-label">Learning Progress</span>
             </div>
             <div className="badge-progress-val">55%</div>
             <div className="progress-bar-track">
               <div className="progress-bar-fill" style={{ width: '55%' }}></div>
-            </div>
-          </div>
-
-          {/* Floating Badge 3: Bottom-Left (Happy Students matching Figma) */}
-          <div className="hero-badge badge-bottom-left animate-float">
-            <div className="badge-text-title">Happy Students</div>
-            <div className="badge-students-rating">
-              <span className="rating-score">4.5</span>
-              <span className="rating-reviews">(240)</span>
-              <span className="rating-star">★</span>
-            </div>
-            <div className="badge-avatars-row">
-              <img src="/images/avatar-emily.jpg" alt="Student" className="badge-avatar" />
-              <img src="/images/avatar-james.jpg" alt="Student" className="badge-avatar" />
-              <img src="/images/avatar-michael.jpg" alt="Student" className="badge-avatar" />
-              <img src="/images/workshop-meeting.jpg" alt="Student" className="badge-avatar" />
-              <div className="badge-avatar-more badge-avatar-lime">2K+</div>
             </div>
           </div>
         </div>

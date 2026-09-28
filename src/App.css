@@ -201,7 +201,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .sign-up-pill {
@@ -236,7 +236,7 @@
   flex-direction: column;
   background-color: var(--primary-blue-dark);
   padding: 20px 24px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   gap: 16px;
 }
 
@@ -255,7 +255,7 @@
 .sign-in-btn-mobile {
   flex: 1;
   padding: 10px;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: #ffffff;
   border-radius: var(--radius-sm);
   font-weight: 600;
@@ -310,49 +310,20 @@
   pointer-events: none;
 }
 
-/* Figma Blend Layers */
-.hero-blend-layer-1 {
-  position: absolute;
-  width: 2500px;
-  height: 386.79px;
-  top: -0.8px;
-  left: -1077px;
-  transform: rotate(0deg);
-  opacity: 1;
-  mix-blend-mode: hard-light;
-  background: #D4FB20;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero-blend-layer-2 {
-  position: absolute;
-  width: 2500px;
-  height: 371.83px;
-  top: -0.8px;
-  left: -1085.12px;
-  transform: rotate(0deg);
-  opacity: 1;
-  mix-blend-mode: hard-light;
-  background: #D4FB20;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Figma Ellips7 Arch:
-   width: 1149; height: 1149; top: 582px; left: 145px; angle: 0deg; opacity: 1; border-width: 320px; border: 320px solid #CBFC01;
+/* Figma Ellips7 Arch (centered in the middle):
+   width: 1149; height: 1149; top: 582px; angle: 0 deg; opacity: 1; border-width: 320px; border: 320px solid #CBFC01;
 */
 .hero-ellipse-7 {
   position: absolute;
   width: 1149px;
   height: 1149px;
   top: 582px;
-  left: 145px;
+  left: 50%;
+  transform: translateX(-50%);
   border-width: 320px;
   border: 320px solid #CBFC01;
   border-radius: 50%;
   box-sizing: border-box;
-  transform: rotate(0deg);
   opacity: 1;
   pointer-events: none;
   z-index: 1;
@@ -377,7 +348,7 @@
 }
 
 /* Cone / Lower-Left Large White 3D Torus (exact Figma specs):
-   width: 342; height: 342; top: 682px; left: 18px; angle: 0deg; opacity: 1;
+   width: 342; height: 342; top: 682px; left: 18px; angle: 0 deg; opacity: 1;
 */
 .decor-torus {
   top: 682px;
@@ -653,12 +624,45 @@
   transition: width 1s ease-in-out;
 }
 
-/* Badge 3: Bottom Left Happy Students matching Figma */
+/* Badge 3: Bottom Left Happy Students (exact Figma specs:
+   width: 258; height: 121; top: 837px; left: 328px; angle: 0 deg; opacity: 1; border-radius: 16px; gap: 8px; padding: 16px; background: #FFFFFF; backdrop-filter: blur(20px);
+*/
 .badge-bottom-left {
-  bottom: 35px;
-  left: -15px;
-  padding: 12px 18px;
+  position: absolute;
+  width: 258px;
+  height: 121px;
+  top: 837px;
+  left: 328px;
   border-radius: 16px;
+  gap: 8px;
+  padding: 16px;
+  background: #FFFFFF;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  opacity: 1;
+  transform: rotate(0deg);
+  box-sizing: border-box;
+  z-index: 10;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 1440px) {
+  .badge-bottom-left {
+    left: calc(50% - 720px + 328px);
+  }
+}
+
+@media (max-width: 768px) {
+  .badge-bottom-left {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 20px auto 0;
+  }
 }
 
 .badge-text-title {
@@ -727,46 +731,63 @@
 
 
 /* ============================================================
-   PARTNER LOGOS STRIP
+   PARTNER LOGOS STRIP (Figma frame 2: width: 1440; height: 202; top: 1024px; background: #F5F5F6;)
    ============================================================ */
 .partners-section {
-  background-color: #ffffff;
-  padding: 38px 0;
-  border-bottom: 1px solid var(--border-light);
+  background-color: #F5F5F6;
+  min-height: 202px;
+  height: 202px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .partners-grid {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 28px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 32px;
 }
 
 .partner-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  opacity: 0.7;
-  transition: opacity 0.2s, transform 0.2s;
+  gap: 12px;
+  opacity: 1;
+  transition: opacity 0.2s ease;
   cursor: pointer;
 }
 
 .partner-item:hover {
-  opacity: 1;
-  transform: translateY(-2px);
+  opacity: 0.8;
 }
 
 .partner-icon {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.partner-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
 }
 
 .partner-name {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: #475569;
+  color: #82868E;
   letter-spacing: -0.02em;
 }
 
@@ -1911,6 +1932,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -2199,8 +2221,13 @@
 }
 
 @keyframes slideLeft {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .cart-drawer-header {
@@ -2939,7 +2966,7 @@
 .video-overlay-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.65) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.65) 100%);
 }
 
 .big-play-btn {
@@ -3004,7 +3031,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
   padding: 16px 20px;
   display: flex;
   align-items: center;
@@ -3024,7 +3051,7 @@
 .scrubber-bar {
   flex: 1;
   height: 6px;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
@@ -3309,10 +3336,25 @@
   position: absolute;
 }
 
-.nf-top-left { top: 60px; left: 8%; }
-.nf-top-right { top: 60px; right: 8%; }
-.nf-bottom-left { bottom: 60px; left: 8%; }
-.nf-bottom-right { bottom: 60px; right: 8%; }
+.nf-top-left {
+  top: 60px;
+  left: 8%;
+}
+
+.nf-top-right {
+  top: 60px;
+  right: 8%;
+}
+
+.nf-bottom-left {
+  bottom: 60px;
+  left: 8%;
+}
+
+.nf-bottom-right {
+  bottom: 60px;
+  right: 8%;
+}
 
 .not-found-container {
   position: relative;
@@ -3371,4 +3413,3 @@
   background-color: var(--neon-lime-hover);
   transform: translateY(-2px);
 }
-

@@ -72,7 +72,7 @@ export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }
             Build Your Skills
           </h2>
           <p className="section-subtitle">
-            Explore our courses, learn from experts, and enhance your skills at every step. From beginner to advanced, find what suits your goals.
+            At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life.
           </p>
         </div>
 

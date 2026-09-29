@@ -87,11 +87,11 @@ button {
   padding-right: 24px;
 }
 
-/* Perfect 120px Grid Background Pattern matching Figma */
+/* Perfect 120px Crisp Grid Background Pattern matching Figma (Zero Blur) */
 .bg-grid-pattern {
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.16) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.16) 1.5px, transparent 1.5px);
   background-size: 120px 120px;
   background-position: center top;
 }

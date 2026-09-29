@@ -67,37 +67,38 @@ export const Footer = ({ onOpen404 }) => {
 
           {/* Links Column 1: Navigation */}
           <div className="footer-nav-col">
-            <h4 className="footer-col-title">Navigation</h4>
+            
             <ul className="footer-links-list">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#courses">Courses</a></li>
-              <li><a href="#learning-paths">Mentors</a></li>
-              <li><a href="#growth">Pricing</a></li>
+              <li><a href="#home">Featured Courses</a></li>
+              <li><a href="#courses">Featured Categories</a></li>
+              <li><a href="#learning-paths">Business</a></li>
+              <li><a href="#growth">IT</a></li>
+              <li><a href="#growth">Design</a></li>
               <li><a href="#404" onClick={(e) => { e.preventDefault(); if (onOpen404) onOpen404(); }}>FAQs</a></li>
             </ul>
           </div>
 
           {/* Links Column 2: Categories */}
           <div className="footer-nav-col">
-            <h4 className="footer-col-title">Categories</h4>
+            
             <ul className="footer-links-list">
-              <li><a href="#courses">Design</a></li>
               <li><a href="#courses">Development</a></li>
               <li><a href="#courses">Marketing</a></li>
-              <li><a href="#courses">Business</a></li>
               <li><a href="#courses">Photography</a></li>
+              <li><a href="#courses">Finance</a></li>
+              <li><a href="#courses">Sport</a></li>
             </ul>
           </div>
 
           {/* Links Column 3: Company */}
           <div className="footer-nav-col">
-            <h4 className="footer-col-title">Company</h4>
+            
             <ul className="footer-links-list">
-              <li><a href="#growth">About Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Press</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Affiliate</a></li>
+              <li><a href="#growth">Become a Creator</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">About</a></li>
             </ul>
           </div>
         </div>

@@ -1,37 +1,43 @@
 import React from 'react';
-import { GlowBlob } from './DecorativeElements';
 
 export const CommunityTestimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'SOPHIE LEE',
-      role: 'Product Designer at Figma',
-      avatar: '/images/avatar-emily.jpg',
-      content: 'ByteSpace transformed my career! The hands-on projects and mentor feedback gave me the confidence to apply for senior roles. I landed my dream job within 3 months of completing the curriculum.'
+      name: 'Sarah M.',
+      role: 'Enthusiastic Learner',
+      avatar: '/images/testimonials/sarah.png',
+      content:
+        'ByteSpace has transformed my approach to learning. The diverse range of courses and the quality of content provided by creators have exceeded my expectations. The platform truly fosters a sense of community and lifelong learning.'
     },
     {
       id: 2,
-      name: 'JEFFREY B.',
-      role: 'Frontend Developer',
-      avatar: '/images/avatar-james.jpg',
-      content: 'The quality of instructors here is unparalleled. Clear explanations, practical codebase examples, and a supportive community make learning complex topics feel effortless and engaging.'
+      name: 'James L.',
+      role: 'Lifelong Learner',
+      avatar: '/images/testimonials/james.png',
+      content:
+        "I've tried several online learning platforms, and ByteSpace stands out for its vibrant community and the variety of courses available. The easy navigation and engaging content make it a go-to platform for continuous skill development."
     },
     {
       id: 3,
-      name: 'ROSA C.',
-      role: 'English Instructor',
-      avatar: '/images/avatar-michael.jpg',
-      content: 'As both a student and now a creator on ByteSpace, I love how intuitive the platform is. The analytics and engagement features make it easy to deliver high-impact courses to global learners.'
+      name: 'Alex B.',
+      role: 'Inspired Creator',
+      avatar: '/images/testimonials/alex.png',
+      content:
+        "As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It's fulfilling to see my courses making a positive impact on learners globally."
     }
   ];
 
   return (
     <section id="testimonials" className="testimonials-section">
-      <GlowBlob color="rgba(204, 255, 0, 0.12)" size={380} style={{ top: '0%', right: '0%' }} />
+      {/* Radiant Glow Shade 1 (Neon Lime - Top Right: 1137x1137, top: -241px, left: 842px) */}
+      <div className="testimonials-radiant-glow-lime" aria-hidden="true" />
 
-      <div className="container">
-        {/* Top Split Header */}
+      {/* Radiant Glow Shade 2 (Blue - Bottom Left: 1137x1137, top: 149px, left: -442px) */}
+      <div className="testimonials-radiant-glow-blue" aria-hidden="true" />
+
+      <div className="container testimonials-container">
+        {/* Top Split Header (Figma exact: width: 1200px, height: 145px, gap: 43px) */}
         <div className="testimonials-top-row">
           <div className="testimonials-heading-wrap">
             <h2 className="testimonials-title">
@@ -42,7 +48,7 @@ export const CommunityTestimonials = () => {
 
           <div className="testimonials-header-description">
             <p className="community-desc-text">
-              ByteSpace has revolutionized the online learning experience! Finding high-quality courses with top-tier industry mentors has never been easier. The platform's intuitive design and supportive community keep learners engaged and motivated every step of the way.
+              At ByteSpace, our vibrant community of learners and creators is at the heart of what we do. Hear directly from those who have experienced the transformative journey of learning and creating on our platform. Explore testimonials that reflect the diverse perspectives of enthusiastic learners and accomplished creators.
             </p>
           </div>
         </div>
@@ -51,7 +57,7 @@ export const CommunityTestimonials = () => {
         <div className="testimonials-grid">
           {testimonials.map((item) => (
             <div key={item.id} className="testimonial-card">
-              {/* Card User Avatar */}
+              {/* Card User Header */}
               <div className="testimonial-user-header">
                 <img 
                   src={item.avatar} 
@@ -60,7 +66,7 @@ export const CommunityTestimonials = () => {
                 />
                 <div className="testimonial-user-meta">
                   <h4 className="testimonial-name">{item.name}</h4>
-                  <span className="testimonial-role-blue">{item.role}</span>
+                  <span className="testimonial-role">{item.role}</span>
                 </div>
               </div>
 
@@ -75,3 +81,4 @@ export const CommunityTestimonials = () => {
     </section>
   );
 };
+

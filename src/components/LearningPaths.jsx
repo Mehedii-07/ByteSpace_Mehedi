@@ -1,49 +1,41 @@
 import React from 'react';
-import { 
-  PenTool, 
-  Smartphone, 
-  MonitorPlay, 
-  Briefcase, 
-  Megaphone, 
-  Camera 
-} from 'lucide-react';
 
 export const LearningPaths = ({ onSelectCategory }) => {
   const paths = [
     {
       id: 'design',
       title: 'Design',
-      icon: <PenTool size={22} color="#0a0f1d" strokeWidth={2.2} />,
+      icon: <img src="/images/paths/path-icon-design.png" alt="Design" className="path-icon-img" width="24" height="24" />,
       category: 'Design'
     },
     {
       id: 'development',
       title: 'Development',
-      icon: <Smartphone size={22} color="#0a0f1d" strokeWidth={2.2} />,
+      icon: <img src="/images/paths/path-icon-development.png" alt="Development" className="path-icon-img" width="24" height="24" />,
       category: 'Development'
     },
     {
       id: 'video-animation',
       title: 'Video & Animation',
-      icon: <MonitorPlay size={22} color="#0a0f1d" strokeWidth={2.2} />,
+      icon: <img src="/images/paths/path-icon-video.png" alt="Video & Animation" className="path-icon-img" width="24" height="24" />,
       category: 'Video & Animation'
     },
     {
       id: 'business',
       title: 'Business',
-      icon: <Briefcase size={22} color="#0a0f1d" strokeWidth={2.2} />,
+      icon: <img src="/images/paths/path-icon-business.png" alt="Business" className="path-icon-img" width="24" height="24" />,
       category: 'Business'
     },
     {
       id: 'marketing',
       title: 'Marketing',
-      icon: <Megaphone size={22} color="#0a0f1d" strokeWidth={2.2} />,
+      icon: <img src="/images/paths/path-icon-marketing.png" alt="Marketing" className="path-icon-img" width="24" height="24" />,
       category: 'Marketing'
     },
     {
       id: 'photography',
       title: 'Photography',
-      icon: <Camera size={22} color="#0a0f1d" strokeWidth={2.2} />,
+      icon: <img src="/images/paths/path-icon-photography.png" alt="Photography" className="path-icon-img" width="24" height="24" />,
       category: 'Photography'
     }
   ];
@@ -54,10 +46,10 @@ export const LearningPaths = ({ onSelectCategory }) => {
         {/* Section Header */}
         <div className="section-header">
           <h2 className="section-title">
-            Explore Diverse Learning Paths at ByteSpace
+            Explore Diverse Learning Paths at Bytespace
           </h2>
           <p className="section-subtitle">
-            Whether you're looking to acquire new skills or advance your career, ByteSpace offers a diverse range of courses designed to meet your learning needs and help you achieve your goals.
+            At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there's something for everyone. Unleash your potential and explore our carefully curated categories.
           </p>
         </div>
 

@@ -3,34 +3,34 @@ import { Star, Heart, BookOpen } from 'lucide-react';
 import { COURSES_DATA } from '../data/coursesData';
 
 export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }) => {
-  const [activeFilter, setActiveFilter] = useState('View All');
+  const [activeFilter, setActiveFilter] = useState('Featured');
   const [favorites, setFavorites] = useState({});
 
   const filterPillsRow1 = [
-    'View All',
-    'Design',
-    'Development',
+    'Featured',
+    'Music',
+    'Drawing & Painting',
     'Marketing',
-    'Business',
-    'Data Science',
-    'UI/UX Design',
-    'Cybersecurity'
+    'Animation',
+    'Social Media',
+    'UI/UX Design'
   ];
 
   const filterPillsRow2 = [
-    'Blockchain & AI',
-    'Digital Art',
-    'Music',
-    'Artificial Intelligence (AI)',
-    'Cloud Computing',
-    'Photography'
+    'Creative Marketing',
+    'Digital Illustration',
+    'Film & Video',
+    'Crafts',
+    'Freelance & Entrepreneurship',
+    'Graphic Design'
   ];
 
   const filterPillsRow3 = [
-    'Product Mgmt',
+    'Photography',
+    'Productivity',
     'Web Development',
-    'Soft Skills',
-    'Writing',
+    'Data Science',
+    'Cooking',
     '+ More'
   ];
 
@@ -46,14 +46,18 @@ export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }
     return COURSES_DATA.filter(course => {
       // Pill filter
       let matchesFilter = true;
-      if (activeFilter !== 'View All' && activeFilter !== '+ More') {
-        matchesFilter = course.category.toLowerCase().includes(activeFilter.toLowerCase()) ||
-          course.subtag.toLowerCase().includes(activeFilter.toLowerCase()) ||
-          course.title.toLowerCase().includes(activeFilter.toLowerCase());
+      if (activeFilter !== 'Featured' && activeFilter !== '+ More') {
+        const query = activeFilter.toLowerCase();
+        matchesFilter = (
+          (course.category && course.category.toLowerCase().includes(query)) ||
+          (course.subtag && course.subtag.toLowerCase().includes(query)) ||
+          (course.title && course.title.toLowerCase().includes(query)) ||
+          (course.description && course.description.toLowerCase().includes(query))
+        );
       }
-      
+
       // Search query filter
-      const matchesQuery = searchQuery === '' || 
+      const matchesQuery = searchQuery === '' ||
         course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         course.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         course.subtag.toLowerCase().includes(searchQuery.toLowerCase());
@@ -72,7 +76,7 @@ export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }
             Build Your Skills
           </h2>
           <p className="section-subtitle">
-            Explore our courses, learn from experts, and enhance your skills at every step. From beginner to advanced, find what suits your goals.
+            At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life.
           </p>
         </div>
 
@@ -109,7 +113,7 @@ export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }
                 className={`figma-pill-btn ${pill === '+ More' ? 'more-pill' : ''} ${activeFilter === pill ? 'active' : ''}`}
                 onClick={() => {
                   if (pill === '+ More') {
-                    setActiveFilter('View All');
+                    setActiveFilter('Featured');
                   } else {
                     setActiveFilter(pill);
                   }
@@ -125,48 +129,44 @@ export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }
         {searchQuery && (
           <div className="search-status-bar">
             <span>Showing results for "<strong>{searchQuery}</strong>" ({filteredCourses.length} found)</span>
-            <button 
+            <button
               className="clear-search-link"
-              onClick={() => setActiveFilter('View All')}
+              onClick={() => setActiveFilter('Featured')}
             >
               Reset Filters
             </button>
           </div>
         )}
 
-        {/* 6 Course Cards Grid */}
+        {/* Course Cards Grid */}
         <div className="courses-grid">
           {filteredCourses.map((course) => (
-            <div 
-              key={course.id} 
+            <div
+              key={course.id}
               className="course-card"
               onClick={() => onSelectCourse && onSelectCourse(course)}
             >
               {/* Card Image Container */}
               <div className="course-image-wrapper">
-                <img 
-                  src={course.image} 
-                  alt={course.title} 
+                <img
+                  src={course.image}
+                  alt={course.title}
                   className="course-thumbnail"
                   loading="lazy"
                 />
-                
-                {/* Duration & Lessons Overlay Pill matching Figma */}
-                <div className="course-overlay-pill">
-                  <span>{course.lessons} Lessons</span>
-                  <span className="dot-divider">•</span>
-                  <span>{course.duration}</span>
-                </div>
 
-                {/* Favorite Heart Button */}
-                <button 
-                  className={`course-fav-btn ${favorites[course.id] ? 'favorited' : ''}`}
-                  onClick={(e) => toggleFavorite(course.id, e)}
-                  title="Save course"
-                  aria-label="Save course to wishlist"
-                >
-                  <Heart size={16} fill={favorites[course.id] ? '#ef4444' : 'none'} color={favorites[course.id] ? '#ef4444' : '#ffffff'} />
-                </button>
+                {/* Auto Layout Horizontal Pills: width: 315; height: 26; top: 150px; left: 13px; gap: 12px; */}
+                <div className="course-image-pills-bar">
+                  <span className="course-pill-item pill-lessons">
+                    {course.lessons} Lessons
+                  </span>
+                  <span className="course-pill-item pill-duration">
+                    {course.duration}
+                  </span>
+                  <span className="course-pill-item pill-comments">
+                    {course.comments} Comments
+                  </span>
+                </div>
               </div>
 
               {/* Card Content */}
@@ -177,50 +177,46 @@ export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }
                     {course.title}
                   </h3>
                   <div className="course-card-rating">
-                    <Star size={13} fill="#f59e0b" color="#f59e0b" />
-                    <span>{course.rating}</span>
+                    <span className="rating-value">{course.rating}</span>
+                    <Star size={18} fill="#CBD5E1" color="#CBD5E1" className="rating-star" />
                   </div>
                 </div>
 
-                {/* Blue Subtag Link */}
-                <div className="course-subtag-link">
-                  {course.subtag}
+                {/* Author: by purepearl studio */}
+                <div className="course-author-row">
+                  <span className="by-prefix">by </span>
+                  <span className="author-name">{course.instructor}</span>
                 </div>
 
-                {/* Meta & Avatars Row */}
+                {/* Level Pill & Student Avatars Stack Row */}
                 <div className="course-meta-avatars-row">
                   <div className="course-level-pill">
-                    {course.lessons} Lessons
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" className="level-bar-icon">
+                      <rect x="1" y="9" width="3" height="6" rx="1" />
+                      <rect x="6.5" y="5" width="3" height="10" rx="1" />
+                      <rect x="12" y="1" width="3" height="14" rx="1" />
+                    </svg>
+                    <span>{course.level}</span>
                   </div>
 
-                  {/* Student Avatars Stack */}
+                  {/* Student Avatars Stack: width: 128; height: 32; */}
                   <div className="student-avatars-stack">
-                    <img src="/images/avatar-emily.jpg" alt="Student" className="stack-avatar" />
-                    <img src="/images/avatar-james.jpg" alt="Student" className="stack-avatar" />
-                    <img src="/images/avatar-michael.jpg" alt="Student" className="stack-avatar" />
-                    <div className="stack-badge-count">{course.studentsCount}</div>
+                    <img
+                      src="/images/student-avatars-stack.png"
+                      alt="Enrolled students"
+                      className="avatar-stack-img"
+                      width="128"
+                      height="32"
+                    />
                   </div>
                 </div>
 
-                {/* Card Bottom Row: Price & Add */}
+                {/* Price Row: $25/lifetime */}
                 <div className="course-card-footer">
                   <div className="course-price-wrap">
                     <span className="price-tag">${course.price}</span>
-                    <span className="price-term">/course</span>
+                    <span className="price-term">{course.priceTerm || '/lifetime'}</span>
                   </div>
-                  {onAddToCart && (
-                    <button 
-                      type="button"
-                      className="course-enroll-quick-btn"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onAddToCart(course);
-                      }}
-                      title="Add to cart"
-                    >
-                      Enroll
-                    </button>
-                  )}
                 </div>
               </div>
             </div>
@@ -233,12 +229,12 @@ export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }
             <BookOpen size={48} color="#94a3b8" />
             <h3>No courses found</h3>
             <p>Try searching with another keyword or resetting the category filter.</p>
-            <button 
+            <button
               type="button"
               className="category-pill-btn active"
-              onClick={() => setActiveFilter('View All')}
+              onClick={() => setActiveFilter('Featured')}
             >
-              View All Courses
+              View Featured Courses
             </button>
           </div>
         )}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { PartnerLogos } from './components/PartnerLogos';
@@ -10,7 +10,6 @@ import { CreateAndManage } from './components/CreateAndManage';
 import { CtaBanner } from './components/CtaBanner';
 import { CommunityTestimonials } from './components/CommunityTestimonials';
 import { Footer } from './components/Footer';
-import { CourseModal } from './components/CourseModal';
 import { CourseDetailPage } from './components/CourseDetailPage';
 import { NotFoundPage } from './components/NotFoundPage';
 import { SearchPage } from './components/SearchPage';
@@ -20,10 +19,28 @@ import { CheckCircle2 } from 'lucide-react';
 import './App.css';
 
 export function App() {
-  const [currentView, setCurrentView] = useState('home'); // 'home' | 'courses' | 'course-detail' | '404'
+  const [currentView, setCurrentView] = useState(() => {
+    if (typeof window !== 'undefined') {
+      if (window.location.hash === '#course-detail') return 'course-detail';
+      if (window.location.hash === '#courses') return 'courses';
+      if (window.location.hash === '#404') return '404';
+    }
+    return 'home';
+  });
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash;
+      if (hash === '#course-detail') setCurrentView('course-detail');
+      else if (hash === '#courses') setCurrentView('courses');
+      else if (hash === '#404') setCurrentView('404');
+      else if (hash === '#home' || hash === '') setCurrentView('home');
+    };
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedModalCourse, setSelectedModalCourse] = useState(null);
-  const [selectedDetailCourse, setSelectedDetailCourse] = useState(COURSES_DATA[0]);
+  const [selectedDetailCourse, setSelectedDetailCourse] = useState(COURSES_DATA[1] || COURSES_DATA[0]);
   const [cartItems, setCartItems] = useState([COURSES_DATA[0]]); // Default 1 item so cart icon has badge like in photo
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -88,6 +105,7 @@ export function App() {
   const handleOpenCourseDetail = (course) => {
     setSelectedDetailCourse(course);
     setCurrentView('course-detail');
+    if (typeof window !== 'undefined') window.location.hash = '#course-detail';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -109,14 +127,17 @@ export function App() {
         onOpenAuth={handleOpenAuth}
         onNavigateHome={() => {
           setCurrentView('home');
+          if (typeof window !== 'undefined') window.location.hash = '#home';
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onNavigateCourses={() => {
           setCurrentView('courses');
+          if (typeof window !== 'undefined') window.location.hash = '#courses';
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onOpen404={() => {
           setCurrentView('404');
+          if (typeof window !== 'undefined') window.location.hash = '#404';
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         currentView={currentView}
@@ -138,7 +159,7 @@ export function App() {
           {/* Courses Catalog Section */}
           <CoursesCatalog 
             searchQuery={searchQuery}
-            onSelectCourse={(course) => setSelectedModalCourse(course)}
+            onSelectCourse={(course) => handleOpenCourseDetail(course)}
             onAddToCart={handleAddToCart}
           />
 
@@ -163,7 +184,7 @@ export function App() {
         <main>
           <SearchPage 
             initialSearchQuery={searchQuery}
-            onSelectCourse={(course) => setSelectedModalCourse(course)}
+            onSelectCourse={(course) => handleOpenCourseDetail(course)}
             onAddToCart={handleAddToCart}
             onNavigateHome={() => {
               setCurrentView('home');
@@ -203,14 +224,6 @@ export function App() {
           setCurrentView('404');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
-      />
-
-      {/* Course Details Modal (Quick Preview) */}
-      <CourseModal 
-        course={selectedModalCourse}
-        onClose={() => setSelectedModalCourse(null)}
-        onAddToCart={handleAddToCart}
-        onViewFullDetail={handleOpenCourseDetail}
       />
 
       {/* Auth Modal (Sign In / Sign Up) */}

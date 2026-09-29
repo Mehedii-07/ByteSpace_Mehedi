@@ -1,7 +1,7 @@
 import React from 'react';
 import { X, Star, Clock, BookOpen, Check, ShieldCheck, PlayCircle } from 'lucide-react';
 
-export const CourseModal = ({ course, onClose, onAddToCart }) => {
+export const CourseModal = ({ course, onClose, onAddToCart, onViewFullDetail }) => {
   if (!course) return null;
 
   return (
@@ -83,7 +83,7 @@ export const CourseModal = ({ course, onClose, onAddToCart }) => {
                     }}
                     title="Open course details page"
                   >
-                    View Syllabus
+                    View Course Details
                   </button>
                 )}
                 <button 

@@ -3,25 +3,22 @@ import {
   Share2, 
   Star, 
   Users, 
-  Check, 
   Play, 
   Pause, 
   BookOpen, 
   Video, 
   Award, 
   Headphones, 
-  ChevronDown, 
-  ChevronUp, 
-  Lock, 
-  PlayCircle,
   CheckCircle2
 } from 'lucide-react';
+import { CourseAbout } from './CourseAbout';
+import { CourseLesson } from './CourseLesson';
+import { CourseReview } from './CourseReview';
 
-export const CourseDetailPage = ({ course, onBack, onAddToCart, initialTab = 'lesson' }) => {
+export const CourseDetailPage = ({ course, onBack, onAddToCart, initialTab = 'reviews' }) => {
   const [activeTab, setActiveTab] = useState(initialTab); // 'about' | 'lesson' | 'reviews'
   const [isPlayingVideo, setIsPlayingVideo] = useState(false);
   const [toastMessage, setToastMessage] = useState(null);
-  const [expandedModule, setExpandedModule] = useState(0);
 
   // Standard course data matching the Figma screenshot
   const courseData = {
@@ -56,99 +53,6 @@ export const CourseDetailPage = ({ course, onBack, onAddToCart, initialTab = 'le
     setToastMessage('Enrolled in course successfully!');
     setTimeout(() => setToastMessage(null), 3000);
   };
-
-  const lessonModules = [
-    {
-      title: 'Module 1: Introduction to Digital Assets',
-      description: "Lay the groundwork with lessons like 'Understanding Digital Elements' and 'Navigating Design Software Tools'. Dive into the essentials of digital asset creation."
-    },
-    {
-      title: 'Module 2: Design Principles for Impact',
-      description: "Master the principles that drive impactful designs with lessons such as 'Color Theory in Digital Design' and 'Typography Essentials'. Elevate your visual communication skills."
-    },
-    {
-      title: 'Module 4: User-Centric Design Strategies',
-      description: "Understand 'Design Thinking in Digital Creation' and delve into 'User Experience (UX) Essentials'. Craft digital assets with a focus on user-centric design."
-    },
-    {
-      title: 'Module 5: Interactive Media and Engagement',
-      description: "Engage your audience with lessons like 'Creating Interactive Presentations' and 'Integrating Multimedia Elements'. Master the art of creating immersive digital experiences."
-    },
-    {
-      title: 'Module 6: Project Showcase and Critique',
-      description: "Reflect your presentation skills with 'Effective Presentation Techniques' and embrace collaboration with 'Peer Critique and Collaboration'. Showcase your work with confidence."
-    },
-    {
-      title: 'Module 7: Optimizing Digital Assets for Various Platforms',
-      description: "Adapt your digital creations for 'Mobile Platforms' and optimize for 'Social Media'. Ensure widespread accessibility and engagement across diverse digital landscapes."
-    }
-  ];
-
-  const curriculumModules = [
-    {
-      title: 'Module 1: Foundational Digital Creation & Asset Setup',
-      lessonsCount: 6,
-      duration: '3h 15m',
-      lessons: [
-        { num: '01', title: 'Introduction to Digital Assets', duration: '12 mins', isFree: true },
-        { num: '02', title: 'Design Principles for Impact', duration: '21 mins', isFree: true },
-        { num: '03', title: 'Advanced Techniques in Digital Creation', duration: '16 mins', isFree: false },
-        { num: '04', title: 'Typography and Color Harmony for Products', duration: '24 mins', isFree: false },
-        { num: '05', title: 'Mastering Layouts & Responsive Grids', duration: '18 mins', isFree: false }
-      ]
-    },
-    {
-      title: 'Module 2: Real-World Workflow & Vector Asset Production',
-      lessonsCount: 8,
-      duration: '5h 40m',
-      lessons: [
-        { num: '06', title: 'Component Architecture & Scalability', duration: '32 mins', isFree: false },
-        { num: '07', title: 'Interactive Prototyping & Motion Foundations', duration: '28 mins', isFree: false },
-        { num: '08', title: 'Exporting Multi-Platform Assets', duration: '19 mins', isFree: false },
-        { num: '09', title: 'Asset Organization & Version Control', duration: '25 mins', isFree: false }
-      ]
-    },
-    {
-      title: 'Module 3: Portfolio Showcases & Commercial Monetization',
-      lessonsCount: 10,
-      duration: '7h 10m',
-      lessons: [
-        { num: '10', title: 'Preparing Commercial Deliverables', duration: '35 mins', isFree: false },
-        { num: '11', title: 'Monetization Models for Independent Creators', duration: '40 mins', isFree: false },
-        { num: '12', title: 'Capstone Project: Complete Asset Suite Review', duration: '55 mins', isFree: false }
-      ]
-    }
-  ];
-
-  const keyPointsList = [
-    'Foundational Concepts',
-    'Design Principles Mastery',
-    'Advanced Techniques in Digital Creation',
-    'Project Showcase and Critique',
-    'Optimizing for Various Platforms',
-    'Digital Asset Management Best Practices',
-    'Monetization Strategies',
-    'Capstone Project: Building Your Portfolio'
-  ];
-
-  const sneakPeakImages = [
-    {
-      url: '/images/sneak-peak-1.jpg',
-      alt: 'UI Wireframing and design sketches on paper'
-    },
-    {
-      url: '/images/sneak-peak-2.jpg',
-      alt: 'MacBook Pro screen showing design interface'
-    },
-    {
-      url: '/images/sneak-peak-3.jpg',
-      alt: 'Desktop iMac showcasing visual design system and layouts'
-    },
-    {
-      url: '/images/sneak-peak-4.jpg',
-      alt: 'Mobile smartphones displaying Byte app interface'
-    }
-  ];
 
   return (
     <div className="course-detail-page-wrapper">
@@ -426,168 +330,13 @@ export const CourseDetailPage = ({ course, onBack, onAddToCart, initialTab = 'le
               </div>
 
               {/* TAB 1: ABOUT */}
-              {activeTab === 'about' && (
-                <div className="detail-tab-panel" role="tabpanel">
-                  
-                  {/* Description Section */}
-                  <div className="detail-info-block">
-                    <h3 className="detail-section-title">Description</h3>
-                    <div className="detail-description-paragraphs">
-                      <p>
-                        Embark on an enlightening exploration into the world of digital creation with our comprehensive course, &ldquo;Build Digital Asset: A Comprehensive Guide.&rdquo; This transformative learning experience invites you to delve deep into the intricacies of crafting impactful digital content. From laying the groundwork with foundational concepts to mastering advanced techniques, this guide is meticulously curated to empower you with the skills essential for navigating the dynamic landscape of digital asset creation.
-                      </p>
-                      <p>
-                        In the initial modules, you&apos;ll establish a solid foundation by immersing yourself in the foundational concepts that form the backbone of digital asset creation. Understand the fundamental elements that constitute compelling digital content and gain proficiency in leveraging these elements to communicate effectively in the digital realm.
-                      </p>
-                      <p>
-                        As you progress through the course, you&apos;ll ascend to higher levels of expertise, delving into the nuances of design principles that drive impactful creations. Uncover the secrets behind effective visual communication, exploring color theory, typography, and layout strategies that elevate your digital assets to new heights. Engage in hands-on exercises that reinforce your understanding, allowing you to apply these principles in practical scenarios.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Sneak Peak Section with 4 Grid Images */}
-                  <div className="detail-info-block">
-                    <h3 className="detail-section-title">Sneak Peak</h3>
-                    <div className="detail-sneak-peak-grid">
-                      {sneakPeakImages.map((img, idx) => (
-                        <div key={idx} className="sneak-peak-card">
-                          <img 
-                            src={img.url} 
-                            alt={img.alt} 
-                            className="sneak-peak-img"
-                            loading="lazy"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Key Points Section with Blue Check Circles */}
-                  <div className="detail-info-block">
-                    <h3 className="detail-section-title">Key Points</h3>
-                    <ul className="detail-key-points-list">
-                      {keyPointsList.map((point, index) => (
-                        <li key={index} className="key-point-row">
-                          <span className="blue-circle-check" aria-hidden="true">
-                            <Check size={12} color="#FFFFFF" strokeWidth={3} />
-                          </span>
-                          <span className="key-point-text">{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                </div>
-              )}
+              {activeTab === 'about' && <CourseAbout />}
 
               {/* TAB 2: LESSON */}
-              {(activeTab === 'lesson' || activeTab === 'lessons') && (
-                <div className="detail-tab-panel" role="tabpanel">
-                  {/* 1. Explore the Modules */}
-                  <div className="detail-info-block">
-                    <h3 className="detail-section-title">Explore the Modules</h3>
-                    <p className="detail-section-desc">
-                      Immerse yourself in the course content as we break down each module into comprehensive lessons, providing practical insights and hands-on experiences.
-                    </p>
-                  </div>
-
-                  {/* 2. Lesson List */}
-                  <div className="detail-info-block">
-                    <h3 className="detail-section-title">Lesson List</h3>
-                    <div className="detail-modules-list">
-                      {lessonModules.map((module, mIdx) => (
-                        <div key={mIdx} className="module-item-card">
-                          <div className="module-item-icon-box">
-                            <Video size={20} color="#0A0F1D" strokeWidth={2.2} />
-                          </div>
-                          <div className="module-item-content">
-                            <h4 className="module-item-title">{module.title}</h4>
-                            <p className="module-item-desc">{module.description}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* 3. Lesson Content */}
-                  <div className="detail-info-block">
-                    <h3 className="detail-section-title">Lesson Content</h3>
-                    <p className="detail-section-desc">
-                      Engage with each lesson through captivating video content, detailed textual explanations, and interactive elements. Download resources, complete assignments, and test your understanding with quizzes.
-                    </p>
-                  </div>
-
-                  {/* 4. Lesson Progress Tracking */}
-                  <div className="detail-info-block">
-                    <h3 className="detail-section-title">Lesson Progress Tracking</h3>
-                    <p className="detail-section-desc">
-                      Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.
-                    </p>
-
-                    {/* Progress Card Box */}
-                    <div className="lesson-progress-card">
-                      <span className="progress-card-label">Learning Progress</span>
-                      <div className="progress-card-percent">55%</div>
-                      <div className="progress-card-bar-track">
-                        <div className="progress-card-bar-fill" style={{ width: '55%' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
+              {(activeTab === 'lesson' || activeTab === 'lessons') && <CourseLesson />}
 
               {/* TAB 3: REVIEWS */}
-              {activeTab === 'reviews' && (
-                <div className="detail-tab-panel" role="tabpanel">
-                  <h3 className="detail-section-title">Student Reviews</h3>
-                  <div className="detail-reviews-overview">
-                    <div className="reviews-score-badge">
-                      <span className="big-rating-number">{courseData.rating}</span>
-                      <div className="star-rating-cluster">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={18} fill="#F59E0B" color="#F59E0B" />
-                        ))}
-                      </div>
-                      <span className="reviews-count-caption">Course Rating • {courseData.reviewsCount} reviews</span>
-                    </div>
-                    
-                    <div className="review-cards-list">
-                      <div className="review-card-item">
-                        <div className="review-card-user">
-                          <img src="/images/avatar-james.jpg" alt="Student reviewer" className="reviewer-avatar" />
-                          <div>
-                            <h5>James Wilson</h5>
-                            <div className="star-rating-cluster">
-                              {[...Array(5)].map((_, i) => (
-                                <Star key={i} size={13} fill="#F59E0B" color="#F59E0B" />
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                        <p className="review-card-comment">
-                          &ldquo;This course is pure gold! The practical asset creation walkthroughs helped me launch my own digital store in under two weeks.&rdquo;
-                        </p>
-                      </div>
-                      <div className="review-card-item">
-                        <div className="review-card-user">
-                          <img src="/images/avatar-emily.jpg" alt="Student reviewer" className="reviewer-avatar" />
-                          <div>
-                            <h5>Sarah Jenkins</h5>
-                            <div className="star-rating-cluster">
-                              {[...Array(5)].map((_, i) => (
-                                <Star key={i} size={13} fill="#F59E0B" color="#F59E0B" />
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                        <p className="review-card-comment">
-                          &ldquo;Every lesson is clear, well-paced, and actionable. Best design and digital asset resource on the web.&rdquo;
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
+              {activeTab === 'reviews' && <CourseReview />}
 
             </div>
 

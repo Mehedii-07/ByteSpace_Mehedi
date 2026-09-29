@@ -4174,83 +4174,234 @@
   color: #64748B;
 }
 
-/* Reviews Panel (Tab 3) */
-.detail-reviews-overview {
-  margin-top: 16px;
-}
+/* ============================================================
+   REVIEWS TAB (Tab 3) - Course Details
+   Headings: 'Poppins', sans-serif (700)
+   Small fonts & Body: 'Satoshi', sans-serif (400/500/600)
+   ============================================================ */
 
-.reviews-score-badge {
-  background: #F8FAFC;
+/* 1. Ratings Overview Summary Card */
+.reviews-summary-card {
   border: 1px solid #E2E8F0;
   border-radius: 16px;
-  padding: 20px;
+  padding: 24px 28px;
+  background-color: #FFFFFF;
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 28px;
+  margin-top: 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
-.big-rating-number {
+.reviews-summary-score-box {
+  background-color: #CBFC01;
+  border-radius: 14px;
+  width: 95px;
+  height: 95px;
+  min-width: 95px;
+  min-height: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(203, 252, 1, 0.28);
+}
+
+.summary-ratings-label {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #0F172A;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.summary-score-value {
   font-family: 'Poppins', sans-serif;
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 700;
   color: #0F172A;
   line-height: 1;
 }
 
-.star-rating-cluster {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.reviews-count-caption {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 14px;
-  color: #64748B;
-}
-
-.review-cards-list {
+.reviews-breakdown-col {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.breakdown-row-item {
+  display: flex;
+  align-items: center;
   gap: 14px;
 }
 
-.review-card-item {
-  border: 1px solid #E2E8F0;
-  border-radius: 14px;
-  padding: 18px 20px;
-  background: #FFFFFF;
+.breakdown-bar-track {
+  flex: 1;
+  height: 6px;
+  background-color: #F1F5F9;
+  border-radius: 9999px;
+  overflow: hidden;
 }
 
-.review-card-user {
+.breakdown-bar-fill {
+  height: 100%;
+  background-color: #CBFC01;
+  border-radius: 9999px;
+  transition: width 0.5s ease;
+}
+
+.breakdown-stars-cluster {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.breakdown-count-val {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748B;
+  min-width: 28px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* 2. Filter Pills Row */
+.reviews-filter-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.review-filter-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  border: 1px solid #E2E8F0;
+  background-color: #F8FAFC;
+  color: #0F172A;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.review-filter-pill-btn:hover {
+  background-color: #F1F5F9;
+  border-color: #CBD5E1;
+}
+
+.review-filter-pill-btn.active {
+  background-color: #CBFC01;
+  border-color: #CBFC01;
+  color: #0A0F1D;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 8px rgba(203, 252, 1, 0.35);
+}
+
+.filter-pill-star {
+  flex-shrink: 0;
+}
+
+/* 3. Review Cards List */
+.detail-review-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-review-card {
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 22px 24px;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.2s ease;
+}
+
+.detail-review-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.detail-review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.detail-reviewer-profile {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 8px;
 }
 
-.reviewer-avatar {
-  width: 36px;
-  height: 36px;
+.detail-reviewer-avatar {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
-.review-card-user h5 {
+.detail-reviewer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-reviewer-name {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 14.5px;
+  font-weight: 700;
   color: #0F172A;
-  margin: 0 0 2px 0;
+  margin: 0;
+  line-height: 1.25;
 }
 
-.review-card-comment {
+.detail-reviewer-role {
   font-family: 'Satoshi', sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 12.5px;
+  color: #64748B;
+  margin: 2px 0 0 0;
+}
+
+.detail-review-date {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 12.5px;
+  color: #64748B;
+}
+
+.detail-review-stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.detail-review-comment {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.62;
   color: #475569;
   margin: 0;
+}
+
+.no-reviews-fallback {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 14px;
+  color: #64748B;
+  padding: 24px 0;
 }
 
 /* Toast Alert */

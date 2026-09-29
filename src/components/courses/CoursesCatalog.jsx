@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Star, Heart, BookOpen } from 'lucide-react';
-import { COURSES_DATA } from '../data/coursesData';
+import { COURSES_DATA } from '../../data/coursesData';
 
 export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }) => {
   const [activeFilter, setActiveFilter] = useState('Featured');

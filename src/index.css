@@ -150,11 +150,11 @@ button {
 }
 
 .animate-float {
-  animation: floatSlow 5s ease-in-out infinite;
+  animation: none !important;
 }
 
 .animate-float-reverse {
-  animation: floatReverse 6s ease-in-out infinite;
+  animation: none !important;
 }
 
 /* Custom Scrollbar */

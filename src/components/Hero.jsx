@@ -77,11 +77,13 @@ export const Hero = ({ onSearch }) => {
               <span className="rating-star">★</span>
             </div>
             <div className="badge-avatars-row">
-              <img src="/images/avatar-emily.jpg" alt="Student" className="badge-avatar" />
-              <img src="/images/avatar-james.jpg" alt="Student" className="badge-avatar" />
-              <img src="/images/avatar-michael.jpg" alt="Student" className="badge-avatar" />
-              <img src="/images/workshop-meeting.jpg" alt="Student" className="badge-avatar" />
-              <div className="badge-avatar-more badge-avatar-lime">2K+</div>
+              <img
+                src="/images/happy-students-avatars.png"
+                alt="2K+ Happy Students"
+                className="happy-students-avatars-img"
+                width="232"
+                height="43"
+              />
             </div>
           </div>
         </div>
@@ -127,14 +129,14 @@ export const Hero = ({ onSearch }) => {
             />
           </div>
 
-          {/* Floating Badge 1: Top-Left (UI/UX Design matching screenshot) */}
+          {/* Floating Badge 1: Top-Left (UI/UX Design) */}
           <div className="hero-badge badge-ui-design">
             <span className="badge-category-title">UI/UX Design</span>
             <span className="badge-category-stats">200 Courses • 1000+ Students</span>
           </div>
 
-          {/* Floating Badge 2: Top-Right (Learning Progress 55% matching screenshot) */}
-          <div className="hero-badge badge-learning-progress ">
+          {/* Floating Badge 2: Top-Right (Learning Progress 55%) */}
+          <div className="hero-badge badge-learning-progress">
             <div className="badge-progress-header">
               <span className="badge-progress-label">Learning Progress</span>
             </div>

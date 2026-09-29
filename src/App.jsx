@@ -13,13 +13,14 @@ import { Footer } from './components/Footer';
 import { CourseModal } from './components/CourseModal';
 import { CourseDetailPage } from './components/CourseDetailPage';
 import { NotFoundPage } from './components/NotFoundPage';
+import { SearchPage } from './components/SearchPage';
 import { AuthModal } from './components/AuthModal';
 import { CartDrawer } from './components/CartDrawer';
 import { CheckCircle2 } from 'lucide-react';
 import './App.css';
 
 export function App() {
-  const [currentView, setCurrentView] = useState('home'); // 'home' | 'course-detail' | '404'
+  const [currentView, setCurrentView] = useState('home'); // 'home' | 'courses' | 'course-detail' | '404'
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedModalCourse, setSelectedModalCourse] = useState(null);
   const [selectedDetailCourse, setSelectedDetailCourse] = useState(COURSES_DATA[0]);
@@ -110,6 +111,10 @@ export function App() {
           setCurrentView('home');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
+        onNavigateCourses={() => {
+          setCurrentView('courses');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
         onOpen404={() => {
           setCurrentView('404');
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -121,7 +126,11 @@ export function App() {
       {currentView === 'home' && (
         <main>
           {/* Hero Section with Search and Visual Arch */}
-          <Hero onSearch={(query) => setSearchQuery(query)} />
+          <Hero onSearch={(query) => {
+            setSearchQuery(query);
+            setCurrentView('courses');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }} />
 
           {/* Partner Logos Strip */}
           <PartnerLogos />
@@ -150,12 +159,26 @@ export function App() {
         </main>
       )}
 
+      {currentView === 'courses' && (
+        <main>
+          <SearchPage 
+            initialSearchQuery={searchQuery}
+            onSelectCourse={(course) => setSelectedModalCourse(course)}
+            onAddToCart={handleAddToCart}
+            onNavigateHome={() => {
+              setCurrentView('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          />
+        </main>
+      )}
+
       {currentView === 'course-detail' && (
         <main>
           <CourseDetailPage 
             course={selectedDetailCourse}
             onBack={() => {
-              setCurrentView('home');
+              setCurrentView('courses');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             onAddToCart={handleAddToCart}

@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 
-export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, currentView = 'home', currentUser = null }) => {
+export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, onNavigateCourses, currentView = 'home', currentUser = null }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
+    if (targetId === 'courses' && onNavigateCourses) {
+      onNavigateCourses();
+      return;
+    }
     if (currentView !== 'home') {
       if (onNavigateHome) onNavigateHome();
       setTimeout(() => {
@@ -45,7 +49,7 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
         <nav className="desktop-nav">
           <a 
             href="#home" 
-            className="nav-link"
+            className={`nav-link ${currentView === 'home' ? 'active' : ''}`}
             onClick={(e) => {
               e.preventDefault();
               if (onNavigateHome) onNavigateHome();
@@ -56,8 +60,15 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
           </a>
           <a 
             href="#courses" 
-            className="nav-link"
-            onClick={(e) => handleNavClick(e, 'courses')}
+            className={`nav-link ${currentView === 'courses' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault();
+              if (onNavigateCourses) {
+                onNavigateCourses();
+              } else {
+                handleNavClick(e, 'courses');
+              }
+            }}
           >
             Courses
           </a>

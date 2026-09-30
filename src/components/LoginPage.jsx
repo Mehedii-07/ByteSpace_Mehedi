@@ -64,7 +64,7 @@ const LimePyramid3D = ({ size = 95, className = '', style = {} }) => (
   </svg>
 );
 
-export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess }) => {
+export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, onOpen404 }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [toastMessage, setToastMessage] = useState(null);
@@ -288,9 +288,22 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess })
 
                 {/* Password */}
                 <div className="register-field-group">
-                  <label htmlFor="login-password" className="register-label">
-                    Password
-                  </label>
+                  <div className="login-password-label-row">
+                    <label htmlFor="login-password" className="register-label">
+                      Password
+                    </label>
+                    <a 
+                      href="#404" 
+                      className="login-forgot-link"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (onOpen404) onOpen404();
+                        else if (typeof window !== 'undefined') window.location.hash = '#404';
+                      }}
+                    >
+                      Forgot password?
+                    </a>
+                  </div>
                   <input 
                     id="login-password"
                     type="password" 

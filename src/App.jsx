@@ -43,7 +43,8 @@ export function App() {
       else if (hash === '#creator-profile' || hash === '#creators') setCurrentView('creator-profile');
       else if (hash === '#course-detail') setCurrentView('course-detail');
       else if (hash === '#courses') setCurrentView('courses');
-      else if (hash === '#home') setCurrentView('home');
+      else if (hash === '#home' || hash === '' || hash === '#') setCurrentView('home');
+      else setCurrentView('404');
     };
     window.addEventListener('hashchange', handleHash);
     return () => window.removeEventListener('hashchange', handleHash);
@@ -111,6 +112,24 @@ export function App() {
     showToast(mode === 'signin' ? `Welcome back, ${name}!` : `Account created for ${name}!`);
   };
 
+  const handleOpen404 = () => {
+    setCurrentView('404');
+    if (typeof window !== 'undefined') window.location.hash = '#404';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigateHome = () => {
+    setCurrentView('home');
+    if (typeof window !== 'undefined') window.location.hash = '#home';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigateCourses = () => {
+    setCurrentView('courses');
+    if (typeof window !== 'undefined') window.location.hash = '#courses';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleNavigateCreators = () => {
     setCurrentView('creator-profile');
     if (typeof window !== 'undefined') window.location.hash = '#creator-profile';
@@ -149,24 +168,18 @@ export function App() {
       {/* Login View (Dedicated Fullscreen Artboard) */}
       {currentView === 'login' ? (
         <LoginPage 
-          onNavigateHome={() => {
-            setCurrentView('home');
-            if (typeof window !== 'undefined') window.location.hash = '#home';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
+          onNavigateHome={handleNavigateHome}
           onNavigateRegister={handleNavigateRegister}
           onAuthSuccess={handleAuthSuccess}
+          onOpen404={handleOpen404}
         />
       ) : currentView === 'register' ? (
         <RegisterPage 
-          onNavigateHome={() => {
-            setCurrentView('home');
-            if (typeof window !== 'undefined') window.location.hash = '#home';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
+          onNavigateHome={handleNavigateHome}
           onNavigateLogin={handleNavigateLogin}
           onAuthSuccess={handleAuthSuccess}
           onOpenLogin={handleNavigateLogin}
+          onOpen404={handleOpen404}
         />
       ) : (
         <>
@@ -176,24 +189,12 @@ export function App() {
             currentUser={currentUser}
             onOpenCart={() => setIsCartOpen(true)}
             onOpenAuth={handleOpenAuth}
-            onNavigateHome={() => {
-              setCurrentView('home');
-              if (typeof window !== 'undefined') window.location.hash = '#home';
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            onNavigateCourses={() => {
-              setCurrentView('courses');
-              if (typeof window !== 'undefined') window.location.hash = '#courses';
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            onNavigateHome={handleNavigateHome}
+            onNavigateCourses={handleNavigateCourses}
             onNavigateCreators={handleNavigateCreators}
             onNavigateRegister={handleNavigateRegister}
             onNavigateLogin={handleNavigateLogin}
-            onOpen404={() => {
-              setCurrentView('404');
-              if (typeof window !== 'undefined') window.location.hash = '#404';
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            onOpen404={handleOpen404}
             currentView={currentView}
           />
 
@@ -215,6 +216,7 @@ export function App() {
                 searchQuery={searchQuery}
                 onSelectCourse={(course) => handleOpenCourseDetail(course)}
                 onAddToCart={handleAddToCart}
+                onOpen404={handleOpen404}
               />
 
               {/* Learning Paths / Category Icons */}
@@ -240,10 +242,7 @@ export function App() {
                 initialSearchQuery={searchQuery}
                 onSelectCourse={(course) => handleOpenCourseDetail(course)}
                 onAddToCart={handleAddToCart}
-                onNavigateHome={() => {
-                  setCurrentView('home');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+                onNavigateHome={handleNavigateHome}
               />
             </main>
           )}
@@ -274,11 +273,7 @@ export function App() {
           {currentView === '404' && (
             <main>
               <NotFoundPage 
-                onGoHome={() => {
-                  setCurrentView('home');
-                  if (typeof window !== 'undefined') window.location.hash = '#home';
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+                onGoHome={handleNavigateHome}
               />
             </main>
           )}
@@ -286,10 +281,9 @@ export function App() {
           {/* Footer */}
           <Footer 
             onNavigateCreators={handleNavigateCreators}
-            onOpen404={() => {
-              setCurrentView('404');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            onNavigateHome={handleNavigateHome}
+            onNavigateCourses={handleNavigateCourses}
+            onOpen404={handleOpen404}
           />
         </>
       )}
@@ -300,6 +294,7 @@ export function App() {
         onClose={() => setAuthModalOpen(false)}
         initialMode={authMode}
         onAuthSuccess={handleAuthSuccess}
+        onOpen404={handleOpen404}
       />
 
       {/* Cart Drawer */}

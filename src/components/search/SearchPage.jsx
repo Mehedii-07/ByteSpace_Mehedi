@@ -177,9 +177,9 @@ export const SearchPage = ({ onSelectCourse, onAddToCart, onNavigateHome, initia
                   setSearchQuery(e.target.value);
                   setCurrentPage(1);
                 }}
-                placeholder="Search"
+                placeholder="Course, topic, creator"
                 className="search-text-input"
-                aria-label="Search courses"
+                aria-label="Course, topic, creator"
               />
             </div>
 

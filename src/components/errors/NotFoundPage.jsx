@@ -21,8 +21,8 @@ export const NotFoundPage = ({ onGoHome }) => {
 
         {/* Lime Pill Button: Back to Home */}
         <div className="not-found-btn-wrapper">
-          <button
-            type="button"
+          <button 
+            type="button" 
             className="not-found-home-btn"
             onClick={onGoHome}
             aria-label="Back to Home"

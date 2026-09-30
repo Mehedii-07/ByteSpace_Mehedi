@@ -1,0 +1,13 @@
+/* ============================================================
+   BYTESPACE MASTER STYLESHEET
+   Matching the original design reference
+   ============================================================ */
+
+/* APP WRAPPER */
+.bytespace-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  position: relative;
+}

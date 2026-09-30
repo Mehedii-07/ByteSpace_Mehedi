@@ -1,0 +1,409 @@
+/* ============================================================
+   HEADER (NAVBAR) & FOOTER STYLES
+   ============================================================ */
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar-wrapper {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+/* Brand Logo matching Figma: width: 171px; height: 37px; top: 35px; left: 122px */
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: 171px;
+  height: 37px;
+  opacity: 1;
+}
+
+.navbar-logo-icon {
+  width: 29px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.footer-logo-icon {
+  width: 29px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 25px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand-name-dark {
+  font-family: var(--font-heading);
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* Desktop Navigation matching Figma: width: 210px; height: 26px; top: 47px; left: 614.5px; gap: 24px */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 210px;
+  height: 26px;
+  opacity: 1;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 26px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  opacity: 0.82;
+}
+
+/* Navbar Actions matching Figma: width: 174px; height: 24px; top: 48px; left: 1146px; gap: 24px */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  width: 174px;
+  height: 24px;
+  opacity: 1;
+}
+
+.nav-auth-link {
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.nav-auth-link:hover {
+  opacity: 0.82;
+}
+
+.cart-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.cart-btn:hover {
+  opacity: 0.82;
+}
+
+/* Exact Figma coordinates on desktop artboard with 100% screen responsiveness */
+@media (min-width: 1200px) {
+  .navbar-container {
+    height: 95px;
+    padding: 0;
+  }
+
+  .navbar-brand {
+    position: absolute;
+    top: 35px;
+    left: 122px;
+    width: 171px;
+    height: 37px;
+    margin: 0;
+  }
+
+  .desktop-nav {
+    position: absolute;
+    top: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 210px;
+    height: 26px;
+    margin: 0;
+  }
+
+  .navbar-actions {
+    position: absolute;
+    top: 48px;
+    right: 120px;
+    width: 174px;
+    height: 24px;
+    margin: 0;
+  }
+}
+
+.cart-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: var(--neon-lime);
+  color: #0f172a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sign-up-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-pill:hover {
+  background-color: var(--neon-lime);
+  color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-toggle-btn {
+  display: none;
+  padding: 6px;
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-blue-dark);
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 16px;
+}
+
+.mobile-drawer a {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.mobile-drawer-auth {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.sign-in-btn-mobile {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.sign-up-btn-mobile {
+  flex: 1;
+  padding: 10px;
+  background-color: var(--neon-lime);
+  color: #0f172a;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background-color: #ffffff;
+  padding: 70px 0 35px 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.footer-bio {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 380px;
+}
+
+.footer-newsletter-form {
+  max-width: 380px;
+}
+
+.newsletter-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 4px 6px 4px 18px;
+  background-color: #f8fafc;
+  transition: border-color 0.2s;
+}
+
+.newsletter-input-wrap:focus-within {
+  border-color: var(--primary-blue);
+  background-color: #ffffff;
+}
+
+.newsletter-input-wrap input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.newsletter-submit-btn {
+  background-color: var(--neon-lime);
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.newsletter-submit-btn:hover {
+  background-color: var(--neon-lime-hover);
+}
+
+.newsletter-disclaimer {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-top: 10px;
+  max-width: 380px;
+}
+
+.newsletter-success {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.footer-col-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.footer-links-list a {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.footer-links-list a:hover {
+  color: var(--primary-blue);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-legal-links a:hover {
+  color: var(--primary-blue);
+}
+
+.footer-inline-link {
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.footer-inline-link:hover {
+  opacity: 0.8;
+}

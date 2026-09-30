@@ -1,22 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { PartnerLogos } from './components/PartnerLogos';
+// Layout Components (Navbar/Header & Footer)
+import { Navbar, Footer } from './components/layout';
+
+// Landing Page Components
+import { 
+  Hero, 
+  PartnerLogos, 
+  LearningPaths, 
+  PathToGrowth, 
+  CreateAndManage, 
+  CtaBanner, 
+  CommunityTestimonials 
+} from './components/landing';
+
+// Courses Catalog & Course Detail
 import { CoursesCatalog, CourseDetailPage } from './components/courses';
-import { CreatorProfilePage } from './components/CreatorProfilePage';
+
+// Creator Profile & Search Pages
+import { CreatorProfilePage } from './components/creator';
+import { SearchPage } from './components/search';
+
+// Auth Pages & Modals
+import { LoginPage, RegisterPage, AuthModal, CartDrawer } from './components/auth';
+
+// Error Pages
+import { NotFoundPage } from './components/errors';
+
+// Data & Icons
 import { COURSES_DATA } from './data/coursesData';
-import { LearningPaths } from './components/LearningPaths';
-import { PathToGrowth } from './components/PathToGrowth';
-import { CreateAndManage } from './components/CreateAndManage';
-import { CtaBanner } from './components/CtaBanner';
-import { CommunityTestimonials } from './components/CommunityTestimonials';
-import { Footer } from './components/Footer';
-import { NotFoundPage } from './components/NotFoundPage';
-import { RegisterPage } from './components/RegisterPage';
-import { LoginPage } from './components/LoginPage';
-import { SearchPage } from './components/SearchPage';
-import { AuthModal } from './components/AuthModal';
-import { CartDrawer } from './components/CartDrawer';
 import { CheckCircle2 } from 'lucide-react';
 import './App.css';
 

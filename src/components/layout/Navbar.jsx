@@ -30,19 +30,19 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
     <header className="navbar-wrapper">
       <div className="container navbar-container">
         {/* Brand Logo matching Figma: width: 171px; height: 37px; top: 35px; left: 122px */}
-        <a 
-          href="#home" 
+        <a
+          href="#home"
           className="navbar-brand"
           onClick={(e) => {
             e.preventDefault();
             if (onNavigateHome) onNavigateHome();
           }}
         >
-          <img 
-            src="/images/bytespace-logo@2x.png" 
+          <img
+            src="/images/bytespace-logo@2x.png"
             srcSet="/images/bytespace-logo.png 1x, /images/bytespace-logo@2x.png 2x, /images/bytespace-logo@4x.png 4x"
-            alt="ByteSpace Logo" 
-            className="navbar-logo-icon" 
+            alt="ByteSpace Logo"
+            className="navbar-logo-icon"
           />
           <span className="brand-name">
             ByteSpace
@@ -51,8 +51,8 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
 
         {/* Desktop Navigation Links matching Figma: width: 210px; height: 26px; top: 47px; left: 614.5px; gap: 24px */}
         <nav className="desktop-nav">
-          <a 
-            href="#home" 
+          <a
+            href="#home"
             className={`nav-link ${currentView === 'home' ? 'active' : ''}`}
             onClick={(e) => {
               e.preventDefault();
@@ -62,8 +62,8 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
           >
             Home
           </a>
-          <a 
-            href="#courses" 
+          <a
+            href="#courses"
             className={`nav-link ${currentView === 'courses' ? 'active' : ''}`}
             onClick={(e) => {
               e.preventDefault();
@@ -76,8 +76,8 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
           >
             Courses
           </a>
-          <a 
-            href="#creator-profile" 
+          <a
+            href="#creator-profile"
             className={`nav-link ${currentView === 'creator-profile' ? 'active' : ''}`}
             onClick={(e) => {
               e.preventDefault();
@@ -98,7 +98,7 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
             <span className="nav-user-greeting">Hi, {currentUser}</span>
           ) : (
             <>
-              <button 
+              <button
                 type="button"
                 className="nav-auth-link"
                 onClick={() => {
@@ -109,7 +109,7 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
                 Sign In
               </button>
 
-              <button 
+              <button
                 type="button"
                 className="nav-auth-link"
                 onClick={() => {
@@ -123,10 +123,10 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
           )}
 
           {/* Clean Vector Bag Icon */}
-          <button 
+          <button
             type="button"
-            className="cart-btn" 
-            onClick={onOpenCart} 
+            className="cart-btn"
+            onClick={onOpenCart}
             title="Shopping Cart"
             aria-label="View Shopping Cart"
           >
@@ -135,7 +135,7 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
           </button>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             type="button"
             className="mobile-toggle-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

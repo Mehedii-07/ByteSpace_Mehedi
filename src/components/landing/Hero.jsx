@@ -135,13 +135,16 @@ export const Hero = ({ onSearch }) => {
               <span className="rating-star">★</span>
             </div>
             <div className="badge-avatars-row">
-              <img
-                src="/images/happy-students-avatars.png"
-                alt="2K+ Happy Students"
-                className="happy-students-avatars-img"
-                width="232"
-                height="43"
-              />
+              <div className="happy-students-stack">
+                <img src="/images/happy-avatar-1.png" alt="Student" className="happy-students-avatar-img" />
+                <img src="/images/avatar-1.png" alt="Student" className="happy-students-avatar-img" />
+                <img src="/images/happy-avatar-3.png" alt="Student" className="happy-students-avatar-img" />
+                <img src="/images/happy-avatar-4.png" alt="Student" className="happy-students-avatar-img" />
+                <img src="/images/happy-avatar-5.png" alt="Student" className="happy-students-avatar-img" />
+                <img src="/images/happy-avatar-6.png" alt="Student" className="happy-students-avatar-img" />
+                <img src="/images/happy-avatar-7.png" alt="Student" className="happy-students-avatar-img" />
+                <span className="happy-students-count">2K+</span>
+              </div>
             </div>
           </div>
         </div>

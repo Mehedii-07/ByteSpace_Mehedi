@@ -161,11 +161,13 @@ export const RegisterPage = ({ onNavigateHome, onNavigateLogin, onAuthSuccess, o
                       </svg>
                       Beginner
                     </span>
-                    <img 
-                      src="/images/student-avatars-stack.png" 
-                      alt="" 
-                      className="register-avatar-stack-mini" 
-                    />
+                    <div className="avatar-stack avatar-stack--sm">
+                      <img src="/images/avatar-1.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-2.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-3.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-4.png" alt="Student" className="avatar-stack-img" />
+                      <span className="avatar-stack-count">26+</span>
+                    </div>
                   </div>
                   <div className="register-price-mini">
                     <strong>$25</strong><span>/life...</span>
@@ -205,11 +207,13 @@ export const RegisterPage = ({ onNavigateHome, onNavigateLogin, onAuthSuccess, o
                       </svg>
                       Beginner
                     </span>
-                    <img 
-                      src="/images/student-avatars-stack.png" 
-                      alt="Students" 
-                      className="register-avatar-stack-full" 
-                    />
+                    <div className="avatar-stack avatar-stack--sm">
+                      <img src="/images/avatar-1.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-2.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-3.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-4.png" alt="Student" className="avatar-stack-img" />
+                      <span className="avatar-stack-count">26+</span>
+                    </div>
                   </div>
                   <div className="register-price-full">
                     <span className="price-val">$25</span>
@@ -232,11 +236,16 @@ export const RegisterPage = ({ onNavigateHome, onNavigateLogin, onAuthSuccess, o
                   <span className="star-icon">★</span>
                 </div>
                 <div className="happy-students-avatars-wrap">
-                  <img 
-                    src="/images/happy-students-avatars.png" 
-                    alt="2K+ Happy Students" 
-                    className="happy-students-img"
-                  />
+                  <div className="happy-students-stack">
+                    <img src="/images/happy-avatar-1.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/avatar-1.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/happy-avatar-3.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/happy-avatar-4.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/happy-avatar-5.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/happy-avatar-6.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/happy-avatar-7.png" alt="Student" className="happy-students-avatar-img" />
+                    <span className="happy-students-count">2K+</span>
+                  </div>
                 </div>
               </div>
 

@@ -15,7 +15,7 @@ import { CourseAbout } from './CourseAbout';
 import { CourseLesson } from './CourseLesson';
 import { CourseReview } from './CourseReview';
 
-export const CourseDetailPage = ({ course, onBack, onAddToCart, initialTab = 'reviews' }) => {
+export const CourseDetailPage = ({ course, onBack, onAddToCart, onNavigateCreators, initialTab = 'reviews' }) => {
   const [activeTab, setActiveTab] = useState(initialTab); // 'about' | 'lesson' | 'reviews'
   const [isPlayingVideo, setIsPlayingVideo] = useState(false);
   const [toastMessage, setToastMessage] = useState(null);
@@ -80,7 +80,14 @@ export const CourseDetailPage = ({ course, onBack, onAddToCart, initialTab = 're
               
               <div className="detail-hero-author-row">
                 <span className="by-prefix">by</span>{' '}
-                <span className="author-lime-link">{courseData.instructor}</span>
+                <span 
+                  className="author-lime-link" 
+                  onClick={onNavigateCreators}
+                  role="button"
+                  tabIndex={0}
+                >
+                  {courseData.instructor}
+                </span>
               </div>
 
               {/* 3 Pill Badges */}
@@ -275,8 +282,12 @@ export const CourseDetailPage = ({ course, onBack, onAddToCart, initialTab = 're
                     type="button" 
                     className="sidebar-profile-outline-btn"
                     onClick={() => {
-                      setToastMessage('Viewing PurePearl Studio full creator portfolio!');
-                      setTimeout(() => setToastMessage(null), 3000);
+                      if (onNavigateCreators) {
+                        onNavigateCreators();
+                      } else {
+                        setToastMessage('Viewing PurePearl Studio full creator portfolio!');
+                        setTimeout(() => setToastMessage(null), 3000);
+                      }
                     }}
                   >
                     See Full Profile

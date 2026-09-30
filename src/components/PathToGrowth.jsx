@@ -56,15 +56,15 @@ export const PathToGrowth = () => {
             <div className="growth-figma-card">
               <div className="gfc-thumb-wrap">
                 <img
-                  src="/images/figma-wireframe-thumb.jpg"
-                  alt="Learn Figma from Scratch"
+                  src="/images/courses/course1.jpg"
+                  alt="Learn Figma from Basic"
                   className="gfc-thumb-img"
                 />
                 <span className="gfc-badge gfc-badge--lessons">17 Lessons</span>
                 <span className="gfc-badge gfc-badge--duration">2 hours 16 mins</span>
               </div>
               <div className="gfc-content">
-                <h3 className="gfc-title">Learn Figma from Scratch</h3>
+                <h3 className="gfc-title">Learn Figma from Basic</h3>
                 <p className="gfc-author">by purepearl studio</p>
                 <div className="gfc-meta-row">
                   <div className="gfc-level-pill">
@@ -130,18 +130,17 @@ export const PathToGrowth = () => {
             <div className="growth-blue-card growth-blue-card--revenue">
               <div className="gbc-label">Total Revenue</div>
               <div className="gbc-sub">July 1-28</div>
-              <div className="gbc-value">$120.29</div>
+              <div className="gbc-value">$120.30</div>
               <div className="gbc-bar-track">
                 <div className="gbc-bar-fill" style={{ width: '68%' }} />
               </div>
             </div>
 
-            {/* Floating Card 2: Year to Date (mid-left) */}
+            {/* Floating Card 2: Total Sales (mid-left) */}
             <div className="growth-blue-card growth-blue-card--ytd">
-              <div className="gbc-label">Year to Date</div>
-              <div className="gbc-sub">2023</div>
-              <div className="gbc-value">$1,200.38</div>
-              <div className="gbc-badge">+12$</div>
+              <div className="gbc-label">Total Sales</div>
+              <div className="gbc-value">$1210.45</div>
+              <div className="gbc-badge">12%</div>
             </div>
 
             {/* Female Student Cutout in Center (first photo uploaded by user) */}
@@ -188,18 +187,18 @@ export const PathToGrowth = () => {
               Create &amp; Manage<br />Courses Easily.
             </h2>
             <p className="growth-description manage-description">
-              <strong>ByteSpace</strong> supports individuals or entities in the creation, publication, and administration of educational courses.
+              <strong>ByteSpace</strong> empowers instructors to easily create, launch, and manage online courses with an intuitive and flexible interface.
             </p>
 
             {/* Feature Points Checklist */}
             <ul className="manage-checklist-clean">
               <li className="checklist-item-clean">
                 <CheckCircle2 className="check-icon-blue" size={22} />
-                <span>Share Your Expertise</span>
+                <span>Effortless Course Creation</span>
               </li>
               <li className="checklist-item-clean">
                 <CheckCircle2 className="check-icon-blue" size={22} />
-                <span>Monetize Your Passion</span>
+                <span>Interactive Tools Integration</span>
               </li>
               <li className="checklist-item-clean">
                 <CheckCircle2 className="check-icon-blue" size={22} />
@@ -207,7 +206,7 @@ export const PathToGrowth = () => {
               </li>
               <li className="checklist-item-clean">
                 <CheckCircle2 className="check-icon-blue" size={22} />
-                <span>Build a Community</span>
+                <span>Active Community</span>
               </li>
             </ul>
           </div>

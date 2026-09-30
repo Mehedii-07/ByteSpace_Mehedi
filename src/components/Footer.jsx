@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 
-export const Footer = ({ onOpen404 }) => {
+export const Footer = ({ onOpen404, onNavigateCreators }) => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
@@ -22,7 +22,7 @@ export const Footer = ({ onOpen404 }) => {
         <div className="footer-top-grid">
           {/* Brand & Newsletter Column */}
           <div className="footer-brand-col">
-            <a href="#" className="footer-brand-logo">
+            <a href="#home" className="footer-brand-logo">
               <img 
                 src="/images/bytespace-logo@2x.png" 
                 srcSet="/images/bytespace-logo.png 1x, /images/bytespace-logo@2x.png 2x, /images/bytespace-logo@4x.png 4x"
@@ -35,7 +35,7 @@ export const Footer = ({ onOpen404 }) => {
             </a>
 
             <p className="footer-bio">
-              Get access to hundreds courses available anytime & anywhere.
+              Stay Up to date with our latest features and releases by joining our newsletter.
             </p>
 
             {/* Newsletter Subscription Box */}
@@ -43,7 +43,7 @@ export const Footer = ({ onOpen404 }) => {
               <div className="newsletter-input-wrap">
                 <input 
                   type="email" 
-                  placeholder="Enter your email address" 
+                  placeholder="Enter your email" 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -55,7 +55,7 @@ export const Footer = ({ onOpen404 }) => {
               </div>
             </form>
             <p className="newsletter-disclaimer">
-              * By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our team.
+              By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
             </p>
             {subscribed && (
               <div className="newsletter-success">
@@ -67,20 +67,17 @@ export const Footer = ({ onOpen404 }) => {
 
           {/* Links Column 1: Navigation */}
           <div className="footer-nav-col">
-            
             <ul className="footer-links-list">
               <li><a href="#home">Featured Courses</a></li>
               <li><a href="#courses">Featured Categories</a></li>
               <li><a href="#learning-paths">Business</a></li>
               <li><a href="#growth">IT</a></li>
               <li><a href="#growth">Design</a></li>
-              <li><a href="#404" onClick={(e) => { e.preventDefault(); if (onOpen404) onOpen404(); }}>FAQs</a></li>
             </ul>
           </div>
 
           {/* Links Column 2: Categories */}
           <div className="footer-nav-col">
-            
             <ul className="footer-links-list">
               <li><a href="#courses">Development</a></li>
               <li><a href="#courses">Marketing</a></li>
@@ -92,9 +89,18 @@ export const Footer = ({ onOpen404 }) => {
 
           {/* Links Column 3: Company */}
           <div className="footer-nav-col">
-            
             <ul className="footer-links-list">
-              <li><a href="#growth">Become a Creator</a></li>
+              <li>
+                <a 
+                  href="#creator-profile" 
+                  onClick={(e) => { 
+                    e.preventDefault(); 
+                    if (onNavigateCreators) onNavigateCreators(); 
+                  }}
+                >
+                  Become a Creator
+                </a>
+              </li>
               <li><a href="#">Affiliate Program</a></li>
               <li><a href="#">Contact</a></li>
               <li><a href="#">Help</a></li>
@@ -103,20 +109,20 @@ export const Footer = ({ onOpen404 }) => {
           </div>
         </div>
 
-        {/* Bottom Copyright & Legal Links */}
+        {/* Bottom Copyright & Legal Links matching Figma */}
         <div className="footer-bottom-bar">
           <div className="copyright-text">
-            Copyright © ByteSpace 2026. All rights reserved.
+            © 2023 ByteSpace. All rights reserved.
           </div>
           <div className="footer-legal-links">
             <a href="#">Privacy Policy</a>
-            <span>•</span>
-            <a href="#">Terms of Use</a>
-            <span>•</span>
-            <a href="#">Cookie Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookies Settings</a>
           </div>
         </div>
       </div>
     </footer>
   );
 };
+
+export default Footer;

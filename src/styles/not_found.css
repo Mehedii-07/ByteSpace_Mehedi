@@ -114,13 +114,16 @@
     padding: 120px 16px 70px 16px;
     min-height: auto;
   }
+
   .not-found-big-number {
     font-size: clamp(130px, 32vw, 220px);
   }
+
   .not-found-main-headline {
     margin-top: -65px;
     font-size: clamp(26px, 6vw, 36px);
   }
+
   .not-found-subtext {
     font-size: 14px;
     margin: 20px auto 24px auto;

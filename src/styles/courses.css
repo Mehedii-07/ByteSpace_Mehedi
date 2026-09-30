@@ -122,14 +122,13 @@
   color: var(--primary-blue);
 }
 
-/* Courses Grid (Figma Frame 8: width: 1199; height: 808; top: 1768px; left: 120px; gap: 40px;) */
+/* Courses Grid (Figma Frame 8: width: 1199; max-width: 1199px; gap: 40px;) */
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   width: 100%;
   max-width: 1199px;
-  min-height: 808px;
   margin: 0 auto;
 }
 

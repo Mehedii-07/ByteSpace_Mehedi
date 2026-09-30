@@ -1,0 +1,554 @@
+/* ============================================================
+   CREATOR PROFILE PAGE (Figma Design Artboard)
+   ============================================================ */
+.creator-profile-page-wrapper {
+  background-color: #FAFBFC;
+  min-height: 100vh;
+}
+
+/* 1. Creator Blue Hero Section with Crisp 120px Grid */
+.creator-hero-section {
+  background-color: #003BE2;
+  color: #FFFFFF;
+  padding: 135px 20px 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.creator-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Creator Profile Top Row */
+.creator-header-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Coral-Pink Squircle Avatar Box */
+.creator-avatar-squircle {
+  width: 92px;
+  height: 92px;
+  border-radius: 26px;
+  overflow: hidden;
+  background-color: #FF7262;
+  flex-shrink: 0;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.creator-avatar-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Name, Badge, and Tagline */
+.creator-identity-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.creator-title-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.creator-brand-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.creator-lime-badge {
+  background-color: #CBFC01;
+  color: #0A0F1D;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.creator-sub-headline {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 16px;
+  color: #DBEAFE;
+  margin: 0;
+}
+
+/* Bio Text */
+.creator-bio-block {
+  max-width: 860px;
+  margin-bottom: 30px;
+}
+
+.creator-bio-block p {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #E0E7FF;
+  margin: 0 0 10px 0;
+}
+
+/* Stats Badges and Follow Button Row */
+.creator-action-bar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.creator-stat-pills-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.creator-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 9px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.stat-num-blue {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #003BE2;
+}
+
+.stat-label-dark {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #0F172A;
+}
+
+/* Neon Lime Follow Button */
+.creator-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #CBFC01;
+  color: #0A0F1D;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(203, 252, 1, 0.35);
+  transition: all 0.2s ease;
+}
+
+.creator-follow-btn:hover {
+  background-color: #B8E600;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(203, 252, 1, 0.5);
+}
+
+.creator-follow-btn.following {
+  background-color: #FFFFFF;
+  color: #003BE2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.creator-follow-btn.following:hover {
+  background-color: #F8FAFC;
+}
+
+/* 2. Lower Catalog Section */
+.creator-catalog-section {
+  background-color: #FAFBFC;
+  padding: 48px 20px 80px 20px;
+}
+
+.creator-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Filter & Sort Toolbar */
+.creator-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.creator-filter-group-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.creator-toolbar-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 9999px;
+  padding: 9px 18px;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #0F172A;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.creator-toolbar-pill-btn:hover {
+  border-color: #CBD5E1;
+  background-color: #F8FAFC;
+}
+
+.creator-toolbar-pill-btn.active-filter {
+  border-color: #003BE2;
+  color: #003BE2;
+  background-color: rgba(0, 59, 226, 0.05);
+}
+
+.toolbar-level-icon {
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+.chevron-trans {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.chevron-trans.rotated {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu Popover */
+.creator-dropdown-relative {
+  position: relative;
+}
+
+.creator-dropdown-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+  padding: 8px;
+  z-index: 50;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.creator-dropdown-popover.popover-align-right {
+  left: auto;
+  right: 0;
+}
+
+.creator-popover-item {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 14px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 14px;
+  color: #334155;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.creator-popover-item:hover {
+  background-color: #F1F5F9;
+  color: #0F172A;
+}
+
+.creator-popover-item.selected {
+  background-color: rgba(0, 59, 226, 0.08);
+  color: #003BE2;
+  font-weight: 700;
+}
+
+/* 3-Column Course Grid */
+.creator-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Course Card */
+.creator-course-card {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.creator-course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.09);
+  border-color: #CBD5E1;
+}
+
+/* Course Image Wrap */
+.creator-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #E2E8F0;
+}
+
+.creator-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.creator-course-card:hover .creator-card-img {
+  transform: scale(1.04);
+}
+
+/* 3 Badges Strip at Bottom of Image */
+.creator-card-badges-strip {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.creator-strip-badge {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+/* Card Body */
+.creator-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.creator-card-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.creator-card-course-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0;
+  line-height: 1.35;
+  flex: 1;
+}
+
+.creator-card-rating-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.creator-rating-num {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #64748B;
+}
+
+.creator-card-by-row {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 13px;
+  color: #64748B;
+  margin-top: -4px;
+}
+
+.creator-by-label {
+  color: #94A3B8;
+}
+
+.creator-by-author {
+  color: #64748B;
+  font-weight: 600;
+}
+
+/* Level Pill & Student Avatars Stack */
+.creator-card-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid #F1F5F9;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.creator-level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #003BE2;
+}
+
+.creator-student-stack-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.creator-student-avatars-img {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Price */
+.creator-card-footer-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: auto;
+}
+
+.creator-price-val {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #003BE2;
+}
+
+.creator-price-term {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 13px;
+  color: #94A3B8;
+}
+
+/* Empty State */
+.creator-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.creator-empty-state h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0;
+}
+
+.creator-empty-state p {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 15px;
+  color: #64748B;
+  margin: 0;
+  max-width: 400px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .creator-courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .creator-hero-section {
+    padding: 110px 16px 40px 16px;
+  }
+  
+  .creator-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .creator-action-bar-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .creator-stat-pills-wrap {
+    justify-content: flex-start;
+  }
+  
+  .creator-courses-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  
+  .creator-toolbar-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+}

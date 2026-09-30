@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { X, Mail, Lock, User, ArrowRight, Check } from 'lucide-react';
 import { NeonSquiggle, Torus3D } from './DecorativeElements';
 
-export const AuthModal = ({ isOpen, onClose, initialMode = 'signin', onAuthSuccess }) => {
+export const AuthModal = ({ isOpen, onClose, initialMode = 'signin', onAuthSuccess, onOpen404 }) => {
   const [mode, setMode] = useState(initialMode); // 'signin' or 'signup'
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -135,7 +135,19 @@ export const AuthModal = ({ isOpen, onClose, initialMode = 'signin', onAuthSucce
                 <div className="label-with-link">
                   <label>Password</label>
                   {mode === 'signin' && (
-                    <a href="#" className="forgot-pass-link" onClick={(e) => e.preventDefault()}>
+                    <a 
+                      href="#404" 
+                      className="forgot-pass-link" 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onClose();
+                        if (onOpen404) {
+                          onOpen404();
+                        } else if (typeof window !== 'undefined') {
+                          window.location.hash = '#404';
+                        }
+                      }}
+                    >
                       Forgot password?
                     </a>
                   )}

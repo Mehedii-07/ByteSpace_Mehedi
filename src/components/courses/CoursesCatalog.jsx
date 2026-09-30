@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Star, Heart, BookOpen } from 'lucide-react';
 import { COURSES_DATA } from '../../data/coursesData';
 
-export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }) => {
+export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart, onOpen404 }) => {
   const [activeFilter, setActiveFilter] = useState('Featured');
   const [favorites, setFavorites] = useState({});
 
@@ -113,7 +113,11 @@ export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }
                 className={`figma-pill-btn ${pill === '+ More' ? 'more-pill' : ''} ${activeFilter === pill ? 'active' : ''}`}
                 onClick={() => {
                   if (pill === '+ More') {
-                    setActiveFilter('Featured');
+                    if (onOpen404) {
+                      onOpen404();
+                    } else if (typeof window !== 'undefined') {
+                      window.location.hash = '#404';
+                    }
                   } else {
                     setActiveFilter(pill);
                   }

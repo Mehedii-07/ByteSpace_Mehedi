@@ -8,29 +8,29 @@ export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart }
 
   const filterPillsRow1 = [
     'Featured',
-    'Music',
+    'UI/UX',
     'Drawing & Painting',
-    'Marketing',
-    'Animation',
-    'Social Media',
-    'UI/UX Design'
+    '3D Modeling',
+    'Character',
+    'Digital Making',
+    'UI/UX Design',
+    'Content & Writing'
   ];
 
   const filterPillsRow2 = [
-    'Creative Marketing',
-    'Digital Illustration',
-    'Film & Video',
-    'Crafts',
-    'Freelance & Entrepreneurship',
-    'Graphic Design'
+    'Physics & Chemistry',
+    'Web Analysis',
+    'Sports',
+    'Personal & Future Development',
+    'Financial Literacy',
+    'Photography'
   ];
 
   const filterPillsRow3 = [
-    'Photography',
-    'Productivity',
-    'Web Development',
-    'Data Science',
-    'Cooking',
+    'Film and Video',
+    'Game Development',
+    'Basic Science',
+    'Dancing',
     '+ More'
   ];
 

@@ -15,10 +15,10 @@ export const LearningPaths = ({ onSelectCategory }) => {
       category: 'Development'
     },
     {
-      id: 'video-animation',
-      title: 'Video & Animation',
-      icon: <img src="/images/paths/path-icon-video.png" alt="Video & Animation" className="path-icon-img" width="24" height="24" />,
-      category: 'Video & Animation'
+      id: 'it-software',
+      title: 'IT & Software',
+      icon: <img src="/images/paths/path-icon-video.png" alt="IT & Software" className="path-icon-img" width="24" height="24" />,
+      category: 'IT & Software'
     },
     {
       id: 'business',

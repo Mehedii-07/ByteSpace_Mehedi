@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 
-export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, onNavigateCourses, currentView = 'home', currentUser = null }) => {
+export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, onNavigateCourses, onNavigateCreators, onNavigateRegister, onNavigateLogin, currentView = 'home', currentUser = null }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     if (targetId === 'courses' && onNavigateCourses) {
       onNavigateCourses();
+      return;
+    }
+    if (targetId === 'creators' && onNavigateCreators) {
+      onNavigateCreators();
       return;
     }
     if (currentView !== 'home') {
@@ -73,9 +77,16 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
             Courses
           </a>
           <a 
-            href="#cta" 
-            className="nav-link"
-            onClick={(e) => handleNavClick(e, 'cta')}
+            href="#creator-profile" 
+            className={`nav-link ${currentView === 'creator-profile' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault();
+              if (onNavigateCreators) {
+                onNavigateCreators();
+              } else {
+                handleNavClick(e, 'creators');
+              }
+            }}
           >
             Creators
           </a>
@@ -90,7 +101,10 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
               <button 
                 type="button"
                 className="nav-auth-link"
-                onClick={() => onOpenAuth && onOpenAuth('signin')}
+                onClick={() => {
+                  if (onNavigateLogin) onNavigateLogin();
+                  else if (onOpenAuth) onOpenAuth('signin');
+                }}
               >
                 Sign In
               </button>
@@ -98,7 +112,10 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
               <button 
                 type="button"
                 className="nav-auth-link"
-                onClick={() => onOpenAuth && onOpenAuth('signup')}
+                onClick={() => {
+                  if (onNavigateRegister) onNavigateRegister();
+                  else if (onOpenAuth) onOpenAuth('signup');
+                }}
               >
                 Join Us
               </button>
@@ -132,12 +149,12 @@ export const Navbar = ({ cartCount = 1, onOpenCart, onOpenAuth, onNavigateHome, 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="mobile-drawer">
-          <a href="#home" onClick={(e) => { handleNavClick(e, 'home'); setMobileMenuOpen(false); }}>Home</a>
-          <a href="#courses" onClick={(e) => { handleNavClick(e, 'courses'); setMobileMenuOpen(false); }}>Courses</a>
-          <a href="#growth" onClick={(e) => { handleNavClick(e, 'growth'); setMobileMenuOpen(false); }}>About us</a>
+          <a href="#home" onClick={(e) => { if (onNavigateHome) onNavigateHome(); else handleNavClick(e, 'home'); setMobileMenuOpen(false); }}>Home</a>
+          <a href="#courses" onClick={(e) => { if (onNavigateCourses) onNavigateCourses(); else handleNavClick(e, 'courses'); setMobileMenuOpen(false); }}>Courses</a>
+          <a href="#creator-profile" onClick={(e) => { if (onNavigateCreators) onNavigateCreators(); else handleNavClick(e, 'creators'); setMobileMenuOpen(false); }}>Creators</a>
           <div className="mobile-drawer-auth">
-            <button className="sign-in-btn-mobile" onClick={() => { onOpenAuth('signin'); setMobileMenuOpen(false); }}>Sign in</button>
-            <button className="sign-up-btn-mobile" onClick={() => { onOpenAuth('signup'); setMobileMenuOpen(false); }}>Sign up</button>
+            <button className="sign-in-btn-mobile" onClick={() => { if (onNavigateLogin) onNavigateLogin(); else onOpenAuth('signin'); setMobileMenuOpen(false); }}>Sign In</button>
+            <button className="sign-up-btn-mobile" onClick={() => { if (onNavigateRegister) onNavigateRegister(); else onOpenAuth('signup'); setMobileMenuOpen(false); }}>Join Us</button>
           </div>
         </div>
       )}

@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { PartnerLogos } from './components/PartnerLogos';
 import { CoursesCatalog, CourseDetailPage } from './components/courses';
+import { CreatorProfilePage } from './components/CreatorProfilePage';
 import { COURSES_DATA } from './data/coursesData';
 import { LearningPaths } from './components/LearningPaths';
 import { PathToGrowth } from './components/PathToGrowth';
@@ -11,6 +12,8 @@ import { CtaBanner } from './components/CtaBanner';
 import { CommunityTestimonials } from './components/CommunityTestimonials';
 import { Footer } from './components/Footer';
 import { NotFoundPage } from './components/NotFoundPage';
+import { RegisterPage } from './components/RegisterPage';
+import { LoginPage } from './components/LoginPage';
 import { SearchPage } from './components/SearchPage';
 import { AuthModal } from './components/AuthModal';
 import { CartDrawer } from './components/CartDrawer';
@@ -20,9 +23,13 @@ import './App.css';
 export function App() {
   const [currentView, setCurrentView] = useState(() => {
     if (typeof window !== 'undefined') {
+      if (window.location.hash === '#home') return 'home';
       if (window.location.hash === '#course-detail') return 'course-detail';
       if (window.location.hash === '#courses') return 'courses';
+      if (window.location.hash === '#creator-profile' || window.location.hash === '#creators') return 'creator-profile';
       if (window.location.hash === '#404') return '404';
+      if (window.location.hash === '#register' || window.location.hash === '#signup') return 'register';
+      if (window.location.hash === '#login' || window.location.hash === '#signin') return 'login';
     }
     return 'home';
   });
@@ -30,10 +37,13 @@ export function App() {
   useEffect(() => {
     const handleHash = () => {
       const hash = window.location.hash;
-      if (hash === '#course-detail') setCurrentView('course-detail');
-      else if (hash === '#courses') setCurrentView('courses');
+      if (hash === '#login' || hash === '#signin') setCurrentView('login');
+      else if (hash === '#register' || hash === '#signup') setCurrentView('register');
       else if (hash === '#404') setCurrentView('404');
-      else if (hash === '#home' || hash === '') setCurrentView('home');
+      else if (hash === '#creator-profile' || hash === '#creators') setCurrentView('creator-profile');
+      else if (hash === '#course-detail') setCurrentView('course-detail');
+      else if (hash === '#courses') setCurrentView('courses');
+      else if (hash === '#home') setCurrentView('home');
     };
     window.addEventListener('hashchange', handleHash);
     return () => window.removeEventListener('hashchange', handleHash);
@@ -101,6 +111,24 @@ export function App() {
     showToast(mode === 'signin' ? `Welcome back, ${name}!` : `Account created for ${name}!`);
   };
 
+  const handleNavigateCreators = () => {
+    setCurrentView('creator-profile');
+    if (typeof window !== 'undefined') window.location.hash = '#creator-profile';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigateRegister = () => {
+    setCurrentView('register');
+    if (typeof window !== 'undefined') window.location.hash = '#register';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigateLogin = () => {
+    setCurrentView('login');
+    if (typeof window !== 'undefined') window.location.hash = '#login';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleOpenCourseDetail = (course) => {
     setSelectedDetailCourse(course);
     setCurrentView('course-detail');
@@ -118,112 +146,153 @@ export function App() {
         </div>
       )}
 
-      {/* Navigation */}
-      <Navbar 
-        cartCount={cartItems.length}
-        currentUser={currentUser}
-        onOpenCart={() => setIsCartOpen(true)}
-        onOpenAuth={handleOpenAuth}
-        onNavigateHome={() => {
-          setCurrentView('home');
-          if (typeof window !== 'undefined') window.location.hash = '#home';
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-        onNavigateCourses={() => {
-          setCurrentView('courses');
-          if (typeof window !== 'undefined') window.location.hash = '#courses';
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-        onOpen404={() => {
-          setCurrentView('404');
-          if (typeof window !== 'undefined') window.location.hash = '#404';
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-        currentView={currentView}
-      />
-
-      {/* View Routing */}
-      {currentView === 'home' && (
-        <main>
-          {/* Hero Section with Search and Visual Arch */}
-          <Hero onSearch={(query) => {
-            setSearchQuery(query);
-            setCurrentView('courses');
+      {/* Login View (Dedicated Fullscreen Artboard) */}
+      {currentView === 'login' ? (
+        <LoginPage 
+          onNavigateHome={() => {
+            setCurrentView('home');
+            if (typeof window !== 'undefined') window.location.hash = '#home';
             window.scrollTo({ top: 0, behavior: 'smooth' });
-          }} />
-
-          {/* Partner Logos Strip */}
-          <PartnerLogos />
-
-          {/* Courses Catalog Section */}
-          <CoursesCatalog 
-            searchQuery={searchQuery}
-            onSelectCourse={(course) => handleOpenCourseDetail(course)}
-            onAddToCart={handleAddToCart}
-          />
-
-          {/* Learning Paths / Category Icons */}
-          <LearningPaths onSelectCategory={handleSelectCategoryFromPaths} />
-
-          {/* Path to Professional Growth Section */}
-          <PathToGrowth />
-
-          {/* Create and Manage Courses Section */}
-          <CreateAndManage />
-
-          {/* CTA Banner: Unlock Your Potential as a Creator */}
-          <CtaBanner onJoinClick={handleJoinTutor} />
-
-          {/* Community Testimonials */}
-          <CommunityTestimonials />
-        </main>
-      )}
-
-      {currentView === 'courses' && (
-        <main>
-          <SearchPage 
-            initialSearchQuery={searchQuery}
-            onSelectCourse={(course) => handleOpenCourseDetail(course)}
-            onAddToCart={handleAddToCart}
+          }}
+          onNavigateRegister={handleNavigateRegister}
+          onAuthSuccess={handleAuthSuccess}
+        />
+      ) : currentView === 'register' ? (
+        <RegisterPage 
+          onNavigateHome={() => {
+            setCurrentView('home');
+            if (typeof window !== 'undefined') window.location.hash = '#home';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onNavigateLogin={handleNavigateLogin}
+          onAuthSuccess={handleAuthSuccess}
+          onOpenLogin={handleNavigateLogin}
+        />
+      ) : (
+        <>
+          {/* Navigation */}
+          <Navbar 
+            cartCount={cartItems.length}
+            currentUser={currentUser}
+            onOpenCart={() => setIsCartOpen(true)}
+            onOpenAuth={handleOpenAuth}
             onNavigateHome={() => {
               setCurrentView('home');
+              if (typeof window !== 'undefined') window.location.hash = '#home';
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-          />
-        </main>
-      )}
-
-      {currentView === 'course-detail' && (
-        <main>
-          <CourseDetailPage 
-            course={selectedDetailCourse}
-            onBack={() => {
+            onNavigateCourses={() => {
               setCurrentView('courses');
+              if (typeof window !== 'undefined') window.location.hash = '#courses';
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            onAddToCart={handleAddToCart}
+            onNavigateCreators={handleNavigateCreators}
+            onNavigateRegister={handleNavigateRegister}
+            onNavigateLogin={handleNavigateLogin}
+            onOpen404={() => {
+              setCurrentView('404');
+              if (typeof window !== 'undefined') window.location.hash = '#404';
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            currentView={currentView}
           />
-        </main>
-      )}
 
-      {currentView === '404' && (
-        <main>
-          <NotFoundPage 
-            onGoHome={() => {
-              setCurrentView('home');
+          {/* View Routing */}
+          {currentView === 'home' && (
+            <main>
+              {/* Hero Section with Search and Visual Arch */}
+              <Hero onSearch={(query) => {
+                setSearchQuery(query);
+                setCurrentView('courses');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }} />
+
+              {/* Partner Logos Strip */}
+              <PartnerLogos />
+
+              {/* Courses Catalog Section */}
+              <CoursesCatalog 
+                searchQuery={searchQuery}
+                onSelectCourse={(course) => handleOpenCourseDetail(course)}
+                onAddToCart={handleAddToCart}
+              />
+
+              {/* Learning Paths / Category Icons */}
+              <LearningPaths onSelectCategory={handleSelectCategoryFromPaths} />
+
+              {/* Path to Professional Growth Section */}
+              <PathToGrowth />
+
+              {/* Create and Manage Courses Section */}
+              <CreateAndManage />
+
+              {/* CTA Banner: Unlock Your Potential as a Creator */}
+              <CtaBanner onJoinClick={handleJoinTutor} />
+
+              {/* Community Testimonials */}
+              <CommunityTestimonials />
+            </main>
+          )}
+
+          {currentView === 'courses' && (
+            <main>
+              <SearchPage 
+                initialSearchQuery={searchQuery}
+                onSelectCourse={(course) => handleOpenCourseDetail(course)}
+                onAddToCart={handleAddToCart}
+                onNavigateHome={() => {
+                  setCurrentView('home');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              />
+            </main>
+          )}
+
+          {currentView === 'creator-profile' && (
+            <main>
+              <CreatorProfilePage 
+                onSelectCourse={handleOpenCourseDetail}
+                onAddToCart={handleAddToCart}
+              />
+            </main>
+          )}
+
+          {currentView === 'course-detail' && (
+            <main>
+              <CourseDetailPage 
+                course={selectedDetailCourse}
+                onBack={() => {
+                  setCurrentView('courses');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onAddToCart={handleAddToCart}
+                onNavigateCreators={handleNavigateCreators}
+              />
+            </main>
+          )}
+
+          {currentView === '404' && (
+            <main>
+              <NotFoundPage 
+                onGoHome={() => {
+                  setCurrentView('home');
+                  if (typeof window !== 'undefined') window.location.hash = '#home';
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              />
+            </main>
+          )}
+
+          {/* Footer */}
+          <Footer 
+            onNavigateCreators={handleNavigateCreators}
+            onOpen404={() => {
+              setCurrentView('404');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           />
-        </main>
+        </>
       )}
-
-      {/* Footer */}
-      <Footer 
-        onOpen404={() => {
-          setCurrentView('404');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-      />
 
       {/* Auth Modal (Sign In / Sign Up) */}
       <AuthModal 

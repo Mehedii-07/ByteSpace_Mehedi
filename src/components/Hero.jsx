@@ -17,15 +17,13 @@ export const Hero = ({ onSearch }) => {
 
   return (
     <section id="home" className="hero-section bg-grid-pattern">
-      {/* Figma Rectangle & Rectangle 15 */}
-      <div className="hero-rectangle-bg" aria-hidden="true"></div>
-      <div className="hero-rectangle-15" aria-hidden="true"></div>
+      <div className="hero-canvas">
+        {/* Figma Rectangle & Rectangle 15 */}
+        <div className="hero-rectangle-bg" aria-hidden="true"></div>
+        <div className="hero-rectangle-15" aria-hidden="true"></div>
 
-      {/* 3D Decorative Doodles & Ellips7 matching Figma assets */}
-      <div className="hero-decorations" aria-hidden="true">
-        <div className="hero-decorations-wrapper">
-          {/* Ellips7 Arch: width: 1149px, height: 1149px, top: 582px, left: 145px, border: 320px solid #CBFC01 */}
-          <div className="hero-ellipse-7" aria-hidden="true"></div>
+        {/* 3D Decorative Doodles matching Figma assets */}
+        <div className="hero-decorations" aria-hidden="true">
           {/* Top-Left Lime Squiggle */}
           <img
             src="/images/decorations/lime_squiggle_top_left.png"
@@ -67,34 +65,13 @@ export const Hero = ({ onSearch }) => {
             alt=""
             className="hero-decor decor-bottom-right"
           />
-
-          {/* Happy student where written (exact Figma specs: width: 258, height: 121, top: 837px, left: 328px) */}
-          <div className="hero-badge badge-bottom-left">
-            <div className="badge-text-title">Happy Students</div>
-            <div className="badge-students-rating">
-              <span className="rating-score">4.5</span>
-              <span className="rating-reviews">(240)</span>
-              <span className="rating-star">★</span>
-            </div>
-            <div className="badge-avatars-row">
-              <img
-                src="/images/happy-students-avatars.png"
-                alt="2K+ Happy Students"
-                className="happy-students-avatars-img"
-                width="232"
-                height="43"
-              />
-            </div>
-          </div>
         </div>
-      </div>
 
-      <div className="container hero-container">
         {/* Hero Headings matching Figma */}
         <div className="hero-content">
           <h1 className="hero-title">
-            Get Access to Hundreds Courses
-            Available
+            Get Access to Hundreds <br />
+            Courses Available
           </h1>
           <p className="hero-subtitle">
             Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
@@ -118,16 +95,19 @@ export const Hero = ({ onSearch }) => {
           </form>
         </div>
 
-        {/* Hero Graphic Showcase with Badges */}
-        <div className="hero-showcase">
-          {/* Student Cutout Image matching user uploaded cutout */}
-          <div className="hero-image-wrapper">
-            <img
-              src="/images/hero-student-cutout.png"
-              alt="Student with laptop and headphones"
-              className="hero-student-cutout-img"
-            />
-          </div>
+        {/* Hero Visual Stage (Ellipse + Student + Badges) */}
+        <div className="hero-stage">
+          {/* Ellips7 7 matching Figma specification:
+              width: 1149; height: 1149; angle: 0 deg; opacity: 1; top: 582px; left: 145px; border-width: 320px; border: 320px solid #CBFC01; */}
+          <div className="hero-ellipse-7" aria-hidden="true"></div>
+
+          {/* Student Cutout Image matching Figma specification:
+              width: 578; height: 541; angle: 0 deg; opacity: 1; top: 512px; left: 431px; */}
+          <img
+            alt="Student with laptop and headphones"
+            className="hero-student-cutout-img"
+            src="/images/hero-student-cutout.png"
+          />
 
           {/* Floating Badge 1: Top-Left (UI/UX Design) */}
           <div className="hero-badge badge-ui-design">
@@ -143,6 +123,25 @@ export const Hero = ({ onSearch }) => {
             <div className="badge-progress-val">55%</div>
             <div className="progress-bar-track">
               <div className="progress-bar-fill" style={{ width: '55%' }}></div>
+            </div>
+          </div>
+
+          {/* Floating Badge 3: Bottom-Left (Happy Students 4.5) */}
+          <div className="hero-badge badge-bottom-left">
+            <div className="badge-text-title">Happy Students</div>
+            <div className="badge-students-rating">
+              <span className="rating-score">4.5</span>
+              <span className="rating-reviews">(240)</span>
+              <span className="rating-star">★</span>
+            </div>
+            <div className="badge-avatars-row">
+              <img
+                src="/images/happy-students-avatars.png"
+                alt="2K+ Happy Students"
+                className="happy-students-avatars-img"
+                width="232"
+                height="43"
+              />
             </div>
           </div>
         </div>

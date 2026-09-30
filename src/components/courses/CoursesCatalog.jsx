@@ -203,15 +203,15 @@ export const CoursesCatalog = ({ searchQuery = '', onSelectCourse, onAddToCart, 
                     <span>{course.level}</span>
                   </div>
 
-                  {/* Student Avatars Stack: width: 128; height: 32; */}
+                  {/* Student Avatars Stack with Count Badge */}
                   <div className="student-avatars-stack">
-                    <img
-                      src="/images/student-avatars-stack.png"
-                      alt="Enrolled students"
-                      className="avatar-stack-img"
-                      width="128"
-                      height="32"
-                    />
+                    <div className="avatar-stack avatar-stack--sm">
+                      <img src="/images/avatar-1.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-2.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-3.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-4.png" alt="Student" className="avatar-stack-img" />
+                      <span className="avatar-stack-count">26+</span>
+                    </div>
                   </div>
                 </div>
 

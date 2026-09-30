@@ -343,13 +343,13 @@ export const CreatorProfilePage = ({ onSelectCourse, onAddToCart }) => {
 
                     {/* Student Avatars Stack with 26+ Badge */}
                     <div className="creator-student-stack-wrap">
-                      <img 
-                        src="/images/student-avatars-stack.png" 
-                        alt="Enrolled students" 
-                        className="creator-student-avatars-img"
-                        width="128"
-                        height="32"
-                      />
+                      <div className="avatar-stack avatar-stack--sm">
+                        <img src="/images/avatar-1.png" alt="Student" className="avatar-stack-img" />
+                        <img src="/images/avatar-2.png" alt="Student" className="avatar-stack-img" />
+                        <img src="/images/avatar-3.png" alt="Student" className="avatar-stack-img" />
+                        <img src="/images/avatar-4.png" alt="Student" className="avatar-stack-img" />
+                        <span className="avatar-stack-count">26+</span>
+                      </div>
                     </div>
                   </div>
 

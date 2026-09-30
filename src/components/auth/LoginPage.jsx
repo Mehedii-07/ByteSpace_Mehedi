@@ -3,11 +3,11 @@ import { Star, CheckCircle2 } from 'lucide-react';
 
 // Neon Lime 3D Torus/Donut Ring
 const LimeTorus3D = ({ size = 85, className = '', style = {} }) => (
-  <svg 
-    width={size} 
-    height={size * 0.75} 
-    viewBox="0 0 100 75" 
-    fill="none" 
+  <svg
+    width={size}
+    height={size * 0.75}
+    viewBox="0 0 100 75"
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
     style={style}
@@ -34,11 +34,11 @@ const LimeTorus3D = ({ size = 85, className = '', style = {} }) => (
 
 // Neon Lime 3D Pyramid / Tetrahedron
 const LimePyramid3D = ({ size = 95, className = '', style = {} }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 100 100" 
-    fill="none" 
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 100 100"
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
     style={style}
@@ -108,8 +108,8 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
 
       {/* Top Left ByteSpace Logo Mark */}
       <header className="register-header">
-        <a 
-          href="#home" 
+        <a
+          href="#home"
           className="register-brand-logo"
           onClick={(e) => {
             e.preventDefault();
@@ -117,11 +117,11 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
           }}
           title="Back to ByteSpace Home"
         >
-          <img 
-            src="/images/bytespace-logo@2x.png" 
+          <img
+            src="/images/bytespace-logo@2x.png"
             srcSet="/images/bytespace-logo.png 1x, /images/bytespace-logo@2x.png 2x, /images/bytespace-logo@4x.png 4x"
-            alt="ByteSpace" 
-            className="register-logo-img" 
+            alt="ByteSpace"
+            className="register-logo-img"
           />
         </a>
       </header>
@@ -129,7 +129,7 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
       {/* Main Login Layout */}
       <main className="register-main-container">
         <div className="register-layout-grid">
-          
+
           {/* Left Column: Heading + Decorative Collage */}
           <div className="register-left-col">
             {/* Top Text Block */}
@@ -150,9 +150,9 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
               {/* Background Card: Build Digital Asset */}
               <div className="register-bg-card">
                 <div className="register-card-img-box">
-                  <img 
-                    src="/images/courses/course-card-2.jpg" 
-                    alt="Build Digital Asset" 
+                  <img
+                    src="/images/courses/course-card-2.jpg"
+                    alt="Build Digital Asset"
                     className="register-card-img"
                   />
                   <div className="register-strip-badges">
@@ -171,11 +171,13 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
                       </svg>
                       Beginner
                     </span>
-                    <img 
-                      src="/images/student-avatars-stack.png" 
-                      alt="" 
-                      className="register-avatar-stack-mini" 
-                    />
+                    <div className="avatar-stack avatar-stack--sm">
+                      <img src="/images/avatar-1.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-2.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-3.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-4.png" alt="Student" className="avatar-stack-img" />
+                      <span className="avatar-stack-count">26+</span>
+                    </div>
                   </div>
                   <div className="register-price-mini">
                     <strong>$25</strong><span>/life...</span>
@@ -186,9 +188,9 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
               {/* Foreground Card: the Power of Big Data */}
               <div className="register-fg-card">
                 <div className="register-card-img-box">
-                  <img 
-                    src="/images/courses/course-card-3.jpg" 
-                    alt="the Power of Big Data" 
+                  <img
+                    src="/images/courses/course-card-3.jpg"
+                    alt="the Power of Big Data"
                     className="register-card-img"
                   />
                   <div className="register-strip-badges">
@@ -215,11 +217,13 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
                       </svg>
                       Beginner
                     </span>
-                    <img 
-                      src="/images/student-avatars-stack.png" 
-                      alt="Students" 
-                      className="register-avatar-stack-full" 
-                    />
+                    <div className="avatar-stack avatar-stack--sm">
+                      <img src="/images/avatar-1.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-2.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-3.png" alt="Student" className="avatar-stack-img" />
+                      <img src="/images/avatar-4.png" alt="Student" className="avatar-stack-img" />
+                      <span className="avatar-stack-count">26+</span>
+                    </div>
                   </div>
                   <div className="register-price-full">
                     <span className="price-val">$25</span>
@@ -242,19 +246,24 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
                   <span className="star-icon">★</span>
                 </div>
                 <div className="happy-students-avatars-wrap">
-                  <img 
-                    src="/images/happy-students-avatars.png" 
-                    alt="2K+ Happy Students" 
-                    className="happy-students-img"
-                  />
+                  <div className="happy-students-stack">
+                    <img src="/images/happy-avatar-1.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/avatar-1.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/happy-avatar-3.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/happy-avatar-4.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/happy-avatar-5.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/happy-avatar-6.png" alt="Student" className="happy-students-avatar-img" />
+                    <img src="/images/happy-avatar-7.png" alt="Student" className="happy-students-avatar-img" />
+                    <span className="happy-students-count">2K+</span>
+                  </div>
                 </div>
               </div>
 
               {/* Floating White 3D Coil on Right */}
               <div className="register-decor-coil">
-                <img 
-                  src="/images/decorations/white_coil_bottom_right.png" 
-                  alt="" 
+                <img
+                  src="/images/decorations/white_coil_bottom_right.png"
+                  alt=""
                   className="white-coil-img"
                 />
               </div>
@@ -275,9 +284,9 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
                   <label htmlFor="login-email" className="register-label">
                     Email
                   </label>
-                  <input 
+                  <input
                     id="login-email"
-                    type="email" 
+                    type="email"
                     className="register-input"
                     placeholder="designer@example.com"
                     value={email}
@@ -292,8 +301,8 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
                     <label htmlFor="login-password" className="register-label">
                       Password
                     </label>
-                    <a 
-                      href="#404" 
+                    <a
+                      href="#404"
                       className="login-forgot-link"
                       onClick={(e) => {
                         e.preventDefault();
@@ -304,9 +313,9 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
                       Forgot password?
                     </a>
                   </div>
-                  <input 
+                  <input
                     id="login-password"
-                    type="password" 
+                    type="password"
                     className="register-input"
                     placeholder="********"
                     value={password}
@@ -332,28 +341,28 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
                 {/* Social Login Buttons: Facebook & Google */}
                 <div className="login-social-row">
                   {/* Facebook Button */}
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="login-social-btn"
                     onClick={() => handleSocialLogin('Facebook')}
                     title="Sign in with Facebook"
                     aria-label="Sign in with Facebook"
                   >
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="#0F172A">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                     </svg>
                   </button>
 
                   {/* Google Button */}
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="login-social-btn"
                     onClick={() => handleSocialLogin('Google')}
                     title="Sign in with Google"
                     aria-label="Sign in with Google"
                   >
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="#0F172A">
-                      <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+                      <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" />
                     </svg>
                   </button>
                 </div>
@@ -361,8 +370,8 @@ export const LoginPage = ({ onNavigateHome, onNavigateRegister, onAuthSuccess, o
                 {/* Bottom New user? Create an account */}
                 <div className="login-register-prompt">
                   New user?{' '}
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="register-login-link"
                     onClick={() => {
                       if (onNavigateRegister) onNavigateRegister();

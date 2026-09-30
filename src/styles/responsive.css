@@ -239,13 +239,14 @@
    RESPONSIVE LANDING PAGE STYLES (Tablet & Mobile)
    ============================================================ */
 
-/* 1. Tablet Landscape & Smaller Laptops (<= 1024px) */
+/* ── 1. Tablet Landscape & Small Laptops (<= 1024px) ──────── */
 @media (max-width: 1024px) {
+  /* Hero: switch from fixed Figma 1440px canvas to responsive flex column */
   .hero-section {
     height: auto;
     min-height: auto;
-    padding-top: 96px;
-    padding-bottom: 24px;
+    padding-top: 90px;
+    padding-bottom: 40px;
     overflow: hidden;
   }
 
@@ -260,6 +261,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 32px;
+    overflow: hidden;
+    padding: 0 16px;
+  }
+
+  /* These are Figma background rects — purely decorative, hide on mobile */
+  .hero-rectangle-bg,
+  .hero-rectangle-15 {
+    display: none;
+  }
+
+  /* Decorations: take out of absolute flow, hide on mobile canvas-flex */
+  .hero-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
     overflow: hidden;
   }
 
@@ -269,46 +290,51 @@
     left: auto;
     transform: none;
     width: 100%;
-    max-width: 680px;
-    padding: 0 20px;
-    margin: 0 auto 16px auto;
+    max-width: 700px;
+    padding: 0 24px;
+    margin: 0 auto;
     text-align: center;
+    z-index: 5;
   }
 
   .hero-title {
-    font-size: clamp(34px, 5.5vw, 46px);
+    font-size: clamp(32px, 5vw, 48px);
     line-height: 1.18;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .hero-subtitle {
     font-size: 15px;
-    line-height: 1.5;
-    margin-bottom: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
     white-space: normal;
   }
 
   .hero-search-form {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     width: 100%;
-    max-width: 520px;
+    max-width: 540px;
     margin: 0 auto;
   }
 
   .hero-search-form .search-input-pill,
   .search-input-pill {
     width: 100%;
-    max-width: 380px;
+    max-width: 360px;
     height: 50px;
     padding: 10px 20px;
+    flex: 1 1 260px;
   }
 
   .search-lime-btn {
     height: 50px;
-    padding: 0 26px;
+    padding: 0 28px;
+    flex-shrink: 0;
   }
 
   .hero-stage {
@@ -316,22 +342,23 @@
     top: auto;
     left: auto;
     width: 100%;
-    max-width: 440px;
-    height: 420px;
-    margin: 10px auto 0 auto;
+    max-width: 460px;
+    height: 400px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     overflow: visible;
+    pointer-events: none;
   }
 
   .hero-ellipse-7 {
     position: absolute;
-    width: 400px;
-    height: 400px;
-    border: 90px solid #CBFC01;
-    border-width: 90px;
-    top: 50px;
+    width: 380px;
+    height: 380px;
+    border: 80px solid #CBFC01;
+    border-width: 80px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -342,7 +369,7 @@
     top: auto;
     left: auto;
     width: 300px;
-    height: 380px;
+    height: 370px;
     object-fit: contain;
     object-position: bottom center;
     z-index: 3;
@@ -351,7 +378,7 @@
 
   .badge-ui-design {
     position: absolute;
-    top: 35px;
+    top: 30px;
     left: -5px;
     transform: scale(0.78);
     transform-origin: top left;
@@ -362,7 +389,7 @@
 
   .badge-learning-progress {
     position: absolute;
-    top: 40px;
+    top: 30px;
     right: -5px;
     left: auto;
     width: 160px;
@@ -375,7 +402,7 @@
 
   .badge-bottom-left {
     position: absolute;
-    bottom: 12px;
+    bottom: 8px;
     top: auto;
     left: 50%;
     transform: translateX(-50%) scale(0.82);
@@ -385,62 +412,75 @@
     pointer-events: auto;
   }
 
+  .decor-mid-left,
+  .decor-cone {
+    display: none;
+  }
+
+  .decor-top-left {
+    width: 100px;
+    left: 10px;
+    top: 30px;
+    opacity: 0.5;
+  }
+
+  .decor-cylinder {
+    width: 90px;
+    right: 10px;
+    top: 30px;
+    opacity: 0.5;
+  }
+
+  .decor-torus {
+    width: 220px;
+    left: -30px;
+    opacity: 0.5;
+  }
+
+  .decor-bottom-right {
+    width: 160px;
+    right: -20px;
+    opacity: 0.5;
+  }
+
   .courses-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
 }
 
-/* 2. Tablets & Mobile (<= 768px) */
+/* ── 2. Tablet Portrait & Large Mobile (<= 768px) ─────────── */
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 85px;
-    padding-bottom: 20px;
-    height: auto;
-    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 32px;
   }
 
   .hero-canvas {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: 100%;
-    height: auto;
+    gap: 24px;
   }
 
   .hero-content {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: 100%;
+    max-width: 100%;
     padding: 0 16px;
-    margin-bottom: 16px;
   }
 
   .hero-title {
-    font-size: clamp(28px, 7vw, 38px);
-    line-height: 1.2;
+    font-size: clamp(26px, 7vw, 36px);
+    line-height: 1.22;
     margin-bottom: 10px;
-    padding: 0 10px;
   }
 
   .hero-subtitle {
     font-size: 14px;
-    line-height: 1.5;
     margin-bottom: 16px;
-    padding: 0 8px;
-    white-space: normal;
   }
 
   .hero-search-form {
     flex-direction: column;
-    width: 100%;
-    max-width: 340px;
-    margin: 0 auto 16px auto;
+    max-width: 360px;
     gap: 10px;
-    padding: 0 10px;
+    padding: 0;
   }
 
   .hero-search-form .search-input-pill,
@@ -448,120 +488,81 @@
     width: 100%;
     max-width: 100%;
     height: 48px;
-    padding: 10px 18px;
+    flex: unset;
   }
 
   .search-lime-btn {
     width: 100%;
-    max-width: 100%;
     height: 48px;
-  }
-
-  /* 3D Shapes on Mobile */
-  .decor-mid-left,
-  .decor-cone {
-    display: none;
+    flex-shrink: unset;
   }
 
   .decor-top-left {
     width: 75px;
-    left: -15px;
-    top: 100px;
+    left: -10px;
     opacity: 0.4;
   }
 
   .decor-cylinder {
     width: 65px;
-    right: -15px;
-    top: 100px;
+    right: -10px;
     opacity: 0.4;
   }
 
   .decor-torus {
-    width: 140px;
-    left: -30px;
-    bottom: -20px;
-    opacity: 0.45;
+    width: 160px;
+    left: -25px;
+    opacity: 0.4;
   }
 
   .decor-bottom-right {
-    width: 100px;
-    right: -20px;
-    bottom: -15px;
-    opacity: 0.45;
+    width: 110px;
+    right: -15px;
+    opacity: 0.4;
   }
 
   .hero-stage {
-    position: relative;
-    width: 100%;
     max-width: 360px;
-    height: 380px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    overflow: visible;
+    height: 360px;
   }
 
   .hero-ellipse-7 {
-    width: 340px;
-    height: 340px;
-    border: 75px solid #CBFC01;
-    border-width: 75px;
-    top: 35px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 330px;
+    height: 330px;
+    border-width: 70px;
+    top: 25px;
   }
 
   .hero-student-cutout-img {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 270px;
-    height: 340px;
-    object-fit: contain;
-    object-position: bottom center;
+    width: 260px;
+    height: 330px;
   }
 
-  /* Floating Badges on Mobile */
   .badge-ui-design {
-    position: absolute;
-    top: 25px;
+    top: 20px;
     left: -8px;
     transform: scale(0.72);
     transform-origin: top left;
-    z-index: 10;
-    padding: 10px 14px;
   }
 
   .badge-learning-progress {
-    position: absolute;
-    top: 30px;
+    top: 20px;
     right: -8px;
-    left: auto;
-    width: 155px;
+    width: 150px;
     transform: scale(0.72);
     transform-origin: top right;
-    z-index: 10;
-    padding: 10px 14px;
   }
 
   .badge-bottom-left {
-    position: absolute;
-    bottom: 8px;
-    top: auto;
-    left: 50%;
-    transform: translateX(-50%) scale(0.78);
-    width: 235px;
-    height: auto;
-    z-index: 10;
-    padding: 10px 14px;
+    bottom: 5px;
+    transform: translateX(-50%) scale(0.76);
+    width: 230px;
   }
 
   /* Partner Logos */
   .partners-section {
-    min-height: auto;
     height: auto;
+    min-height: auto;
     padding: 32px 16px;
   }
 
@@ -583,7 +584,7 @@
     font-size: 13.5px;
   }
 
-  /* Courses Catalog */
+  /* Courses Grid */
   .courses-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -678,90 +679,122 @@
     gap: 20px;
   }
 
+  /* Auth Modal */
+  .modal-body-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-preview-col {
+    display: none;
+  }
+
   /* Footer */
   .footer-top-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
 
-  .footer-subscribe-form {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-
-  .footer-subscribe-input {
-    width: 100%;
-  }
-
-  .footer-subscribe-btn {
-    width: 100%;
-  }
-
   .footer-bottom-bar {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .footer-legal-links {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Search / Courses Page */
+  .search-hero-section {
+    padding: 100px 16px 48px 16px;
+  }
+
+  .search-hero-title {
+    font-size: clamp(26px, 7vw, 36px);
+    margin-bottom: 20px;
+  }
+
+  .search-hero-form {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
   }
 }
 
-/* 3. Small Mobile Devices (<= 480px) */
+/* ── 3. Small Mobile (<= 480px) ───────────────────────────── */
 @media (max-width: 480px) {
+  /* Toast: full-width stretch so it never clips */
+  .toast-notification {
+    bottom: 16px;
+    right: 12px;
+    left: 12px;
+    font-size: 0.85rem;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-section {
+    padding-top: 72px;
+    padding-bottom: 24px;
+  }
+
+  .hero-canvas {
+    gap: 20px;
+  }
+
   .hero-title {
-    font-size: clamp(24px, 6.8vw, 30px);
+    font-size: clamp(22px, 6.5vw, 28px);
     line-height: 1.22;
-    padding: 0 10px;
     margin-bottom: 8px;
   }
 
   .hero-subtitle {
     font-size: 13px;
-    padding: 0 8px;
     margin-bottom: 14px;
   }
 
   .hero-search-form {
-    max-width: 310px;
-    margin-bottom: 12px;
+    max-width: 300px;
   }
 
   .hero-stage {
-    max-width: 315px;
-    height: 330px;
+    max-width: 310px;
+    height: 320px;
   }
 
   .hero-ellipse-7 {
     width: 290px;
     height: 290px;
-    border: 65px solid #CBFC01;
-    border-width: 65px;
-    top: 30px;
+    border-width: 62px;
+    top: 20px;
   }
 
   .hero-student-cutout-img {
-    width: 235px;
-    height: 300px;
+    width: 230px;
+    height: 295px;
   }
 
   .badge-ui-design {
-    top: 15px;
+    top: 12px;
     left: -8px;
-    transform: scale(0.66);
+    transform: scale(0.64);
     transform-origin: top left;
   }
 
   .badge-learning-progress {
-    top: 20px;
+    top: 12px;
     right: -8px;
     width: 145px;
-    transform: scale(0.66);
+    transform: scale(0.64);
     transform-origin: top right;
   }
 
   .badge-bottom-left {
-    bottom: 5px;
-    transform: translateX(-50%) scale(0.72);
-    width: 230px;
+    bottom: 2px;
+    transform: translateX(-50%) scale(0.68);
+    width: 225px;
   }
 
   .paths-grid {
@@ -789,4 +822,3 @@
     padding: 10px 14px;
   }
 }
-

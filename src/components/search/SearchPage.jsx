@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Search, ChevronDown, ChevronLeft, ChevronRight, Star, SlidersHorizontal, Tag, Signal, ArrowUpDown, BookOpen } from 'lucide-react';
-import { COURSES_DATA } from '../data/coursesData';
+import { COURSES_DATA } from '../../data/coursesData';
 
 export const SearchPage = ({ onSelectCourse, onAddToCart, onNavigateHome, initialSearchQuery = '' }) => {
   const [searchQuery, setSearchQuery] = useState(initialSearchQuery);
@@ -177,9 +177,9 @@ export const SearchPage = ({ onSelectCourse, onAddToCart, onNavigateHome, initia
                   setSearchQuery(e.target.value);
                   setCurrentPage(1);
                 }}
-                placeholder="Search"
+                placeholder="Course, topic, creator"
                 className="search-text-input"
-                aria-label="Search courses"
+                aria-label="Course, topic, creator"
               />
             </div>
 
@@ -400,13 +400,13 @@ export const SearchPage = ({ onSelectCourse, onAddToCart, onNavigateHome, initia
                       </div>
 
                       <div className="student-avatars-stack">
-                        <img
-                          src="/images/student-avatars-stack.png"
-                          alt="Enrolled students"
-                          className="avatar-stack-img"
-                          width="128"
-                          height="32"
-                        />
+                        <div className="avatar-stack avatar-stack--sm">
+                          <img src="/images/avatar-1.png" alt="Student" className="avatar-stack-img" />
+                          <img src="/images/avatar-2.png" alt="Student" className="avatar-stack-img" />
+                          <img src="/images/avatar-3.png" alt="Student" className="avatar-stack-img" />
+                          <img src="/images/avatar-4.png" alt="Student" className="avatar-stack-img" />
+                          <span className="avatar-stack-count">26+</span>
+                        </div>
                       </div>
                     </div>
 

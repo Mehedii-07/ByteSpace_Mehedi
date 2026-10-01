@@ -1,0 +1,824 @@
+/* ============================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ============================================================ */
+@media (max-width: 1100px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .paths-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 868px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-toggle-btn {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-showcase {
+    max-width: 100%;
+    height: 420px;
+  }
+
+  .hero-figma-card {
+    width: 240px;
+    left: 0;
+    top: 30px;
+    padding: 10px;
+  }
+
+  .hfc-thumb-wrap {
+    height: 120px;
+  }
+
+  .hfc-title {
+    font-size: 0.95rem;
+  }
+
+  .hero-image-wrapper {
+    width: 360px;
+    height: 360px;
+  }
+
+  .badge-learning-progress {
+    right: 10px;
+    top: 140px;
+    width: 160px;
+    padding: 12px 16px;
+  }
+
+  .badge-progress-val {
+    font-size: 2.2rem;
+  }
+
+  .hero-showcase-squiggle {
+    top: 50px;
+    right: 15px;
+    width: 70px;
+  }
+
+  .growth-row {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .growth-features-container {
+    gap: 80px;
+  }
+
+  .growth-visual-col {
+    height: 480px;
+  }
+
+  .growth-fg-boy-wrap {
+    width: 340px;
+    height: 440px;
+    left: 50%;
+  }
+
+  .growth-fg-girl-wrap {
+    width: 330px;
+    height: 440px;
+    left: 50%;
+  }
+
+  .growth-figma-card {
+    width: 250px;
+    left: 0;
+    top: 20px;
+    padding: 10px;
+  }
+
+  .gfc-thumb-wrap {
+    height: 125px;
+  }
+
+  .gfc-title {
+    font-size: 0.95rem;
+  }
+
+  .growth-progress-badge {
+    right: 5px;
+    top: 150px;
+    width: 165px;
+    padding: 12px 16px;
+  }
+
+  .gpb-val {
+    font-size: 2.2rem;
+  }
+
+  .growth-boy-squiggle {
+    top: 60px;
+    right: 20px;
+  }
+
+  .growth-blue-card {
+    width: 170px;
+    padding: 12px 14px;
+    left: 5px;
+  }
+
+  .growth-happy-badge {
+    right: 0;
+    bottom: 20px;
+    width: 230px;
+    padding: 12px 16px;
+  }
+
+  .ghb-avatars-img {
+    width: 190px;
+  }
+
+  .testimonials-top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-body-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-preview-col {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .paths-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .hero-showcase {
+    height: 360px;
+  }
+
+  .hero-image-wrapper {
+    width: 270px;
+    height: 270px;
+  }
+
+  .growth-figma-card {
+    display: none;
+  }
+
+  .growth-boy-squiggle {
+    display: none;
+  }
+
+  .growth-visual-col {
+    height: 420px;
+  }
+
+  .growth-fg-boy-wrap,
+  .growth-fg-girl-wrap {
+    width: 260px;
+    height: 400px;
+  }
+
+  .growth-blue-card--revenue {
+    top: 10px;
+  }
+
+  .growth-blue-card--ytd {
+    top: 140px;
+  }
+
+  .growth-progress-badge {
+    right: 5px;
+    top: 120px;
+    width: 140px;
+  }
+
+  .growth-happy-badge {
+    width: 200px;
+    padding: 10px 12px;
+  }
+
+  .ghb-avatars-img {
+    width: 160px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE LANDING PAGE STYLES (Tablet & Mobile)
+   ============================================================ */
+
+/* ── 1. Tablet Landscape & Small Laptops (<= 1024px) ──────── */
+@media (max-width: 1024px) {
+  /* Hero: switch from fixed Figma 1440px canvas to responsive flex column */
+  .hero-section {
+    height: auto;
+    min-height: auto;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    overflow: hidden;
+  }
+
+  .hero-canvas {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    overflow: hidden;
+    padding: 0 16px;
+  }
+
+  /* These are Figma background rects — purely decorative, hide on mobile */
+  .hero-rectangle-bg,
+  .hero-rectangle-15 {
+    display: none;
+  }
+
+  /* Decorations: take out of absolute flow, hide on mobile canvas-flex */
+  .hero-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 700px;
+    padding: 0 24px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 5;
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.18;
+    margin-bottom: 14px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    white-space: normal;
+  }
+
+  .hero-search-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .hero-search-form .search-input-pill,
+  .search-input-pill {
+    width: 100%;
+    max-width: 360px;
+    height: 50px;
+    padding: 10px 20px;
+    flex: 1 1 260px;
+  }
+
+  .search-lime-btn {
+    height: 50px;
+    padding: 0 28px;
+    flex-shrink: 0;
+  }
+
+  .hero-stage {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 460px;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .hero-ellipse-7 {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border: 80px solid #CBFC01;
+    border-width: 80px;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .hero-student-cutout-img {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 300px;
+    height: 370px;
+    object-fit: contain;
+    object-position: bottom center;
+    z-index: 3;
+    pointer-events: auto;
+  }
+
+  .badge-ui-design {
+    position: absolute;
+    top: 30px;
+    left: -5px;
+    transform: scale(0.78);
+    transform-origin: top left;
+    z-index: 10;
+    padding: 10px 14px;
+    pointer-events: auto;
+  }
+
+  .badge-learning-progress {
+    position: absolute;
+    top: 30px;
+    right: -5px;
+    left: auto;
+    width: 160px;
+    transform: scale(0.78);
+    transform-origin: top right;
+    z-index: 10;
+    padding: 10px 14px;
+    pointer-events: auto;
+  }
+
+  .badge-bottom-left {
+    position: absolute;
+    bottom: 8px;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%) scale(0.82);
+    width: 240px;
+    z-index: 10;
+    padding: 10px 14px;
+    pointer-events: auto;
+  }
+
+  .decor-mid-left,
+  .decor-cone {
+    display: none;
+  }
+
+  .decor-top-left {
+    width: 100px;
+    left: 10px;
+    top: 30px;
+    opacity: 0.5;
+  }
+
+  .decor-cylinder {
+    width: 90px;
+    right: 10px;
+    top: 30px;
+    opacity: 0.5;
+  }
+
+  .decor-torus {
+    width: 220px;
+    left: -30px;
+    opacity: 0.5;
+  }
+
+  .decor-bottom-right {
+    width: 160px;
+    right: -20px;
+    opacity: 0.5;
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* ── 2. Tablet Portrait & Large Mobile (<= 768px) ─────────── */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 80px;
+    padding-bottom: 32px;
+  }
+
+  .hero-canvas {
+    gap: 24px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(26px, 7vw, 36px);
+    line-height: 1.22;
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .hero-search-form {
+    flex-direction: column;
+    max-width: 360px;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .hero-search-form .search-input-pill,
+  .search-input-pill {
+    width: 100%;
+    max-width: 100%;
+    height: 48px;
+    flex: unset;
+  }
+
+  .search-lime-btn {
+    width: 100%;
+    height: 48px;
+    flex-shrink: unset;
+  }
+
+  .decor-top-left {
+    width: 75px;
+    left: -10px;
+    opacity: 0.4;
+  }
+
+  .decor-cylinder {
+    width: 65px;
+    right: -10px;
+    opacity: 0.4;
+  }
+
+  .decor-torus {
+    width: 160px;
+    left: -25px;
+    opacity: 0.4;
+  }
+
+  .decor-bottom-right {
+    width: 110px;
+    right: -15px;
+    opacity: 0.4;
+  }
+
+  .hero-stage {
+    max-width: 360px;
+    height: 360px;
+  }
+
+  .hero-ellipse-7 {
+    width: 330px;
+    height: 330px;
+    border-width: 70px;
+    top: 25px;
+  }
+
+  .hero-student-cutout-img {
+    width: 260px;
+    height: 330px;
+  }
+
+  .badge-ui-design {
+    top: 20px;
+    left: -8px;
+    transform: scale(0.72);
+    transform-origin: top left;
+  }
+
+  .badge-learning-progress {
+    top: 20px;
+    right: -8px;
+    width: 150px;
+    transform: scale(0.72);
+    transform-origin: top right;
+  }
+
+  .badge-bottom-left {
+    bottom: 5px;
+    transform: translateX(-50%) scale(0.76);
+    width: 230px;
+  }
+
+  /* Partner Logos */
+  .partners-section {
+    height: auto;
+    min-height: auto;
+    padding: 32px 16px;
+  }
+
+  .partners-grid {
+    justify-content: center;
+    gap: 20px 28px;
+  }
+
+  .partner-item {
+    gap: 8px;
+  }
+
+  .partner-logo-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .partner-name {
+    font-size: 13.5px;
+  }
+
+  /* Courses Grid */
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .figma-filters-cloud {
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+
+  .figma-pill-btn {
+    padding: 6px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Learning Paths */
+  .paths-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  /* Growth Section */
+  .growth-row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .growth-features-container {
+    gap: 60px;
+  }
+
+  .growth-visual-col {
+    height: 420px;
+  }
+
+  .growth-fg-boy-wrap,
+  .growth-fg-girl-wrap {
+    width: 300px;
+    height: 400px;
+  }
+
+  .growth-progress-badge {
+    right: 0;
+    top: 130px;
+    width: 150px;
+    padding: 10px 14px;
+  }
+
+  .growth-happy-badge {
+    right: 0;
+    bottom: 10px;
+    width: 215px;
+    padding: 10px 14px;
+  }
+
+  /* CTA Banner */
+  .cta-section {
+    padding: 55px 16px;
+  }
+
+  .cta-decor-left-group,
+  .cta-decor-right-group {
+    width: 120px;
+    opacity: 0.35;
+  }
+
+  .cta-headline {
+    font-size: clamp(24px, 6vw, 32px);
+    line-height: 1.25;
+  }
+
+  .cta-subheadline {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+
+  .cta-join-btn {
+    width: 100%;
+    max-width: 240px;
+    height: 48px;
+  }
+
+  /* Testimonials */
+  .testimonials-top-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Auth Modal */
+  .modal-body-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-preview-col {
+    display: none;
+  }
+
+  /* Footer */
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .footer-legal-links {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Search / Courses Page */
+  .search-hero-section {
+    padding: 100px 16px 48px 16px;
+  }
+
+  .search-hero-title {
+    font-size: clamp(26px, 7vw, 36px);
+    margin-bottom: 20px;
+  }
+
+  .search-hero-form {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+  }
+}
+
+/* ── 3. Small Mobile (<= 480px) ───────────────────────────── */
+@media (max-width: 480px) {
+  /* Toast: full-width stretch so it never clips */
+  .toast-notification {
+    bottom: 16px;
+    right: 12px;
+    left: 12px;
+    font-size: 0.85rem;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-section {
+    padding-top: 72px;
+    padding-bottom: 24px;
+  }
+
+  .hero-canvas {
+    gap: 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(22px, 6.5vw, 28px);
+    line-height: 1.22;
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .hero-search-form {
+    max-width: 300px;
+  }
+
+  .hero-stage {
+    max-width: 310px;
+    height: 320px;
+  }
+
+  .hero-ellipse-7 {
+    width: 290px;
+    height: 290px;
+    border-width: 62px;
+    top: 20px;
+  }
+
+  .hero-student-cutout-img {
+    width: 230px;
+    height: 295px;
+  }
+
+  .badge-ui-design {
+    top: 12px;
+    left: -8px;
+    transform: scale(0.64);
+    transform-origin: top left;
+  }
+
+  .badge-learning-progress {
+    top: 12px;
+    right: -8px;
+    width: 145px;
+    transform: scale(0.64);
+    transform-origin: top right;
+  }
+
+  .badge-bottom-left {
+    bottom: 2px;
+    transform: translateX(-50%) scale(0.68);
+    width: 225px;
+  }
+
+  .paths-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .growth-visual-col {
+    height: 370px;
+  }
+
+  .growth-fg-boy-wrap,
+  .growth-fg-girl-wrap {
+    width: 260px;
+    height: 350px;
+  }
+
+  .growth-stats-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .stat-card {
+    flex: 1 1 45%;
+    padding: 10px 14px;
+  }
+}

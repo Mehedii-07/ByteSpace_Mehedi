@@ -1,0 +1,131 @@
+/* ============================================================
+   404 NOT FOUND PAGE (Figma 404 Artboard)
+   ============================================================ */
+.not-found-page-wrapper,
+.not-found-page {
+  background-color: #003BE2;
+  color: #ffffff;
+  min-height: calc(100vh - 95px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 140px 20px 100px 20px;
+}
+
+.not-found-content-box,
+.not-found-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Massive 404 Display with Lime Gradient to transparent */
+.not-found-big-number,
+.not-found-code {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(180px, 26vw, 360px);
+  font-weight: 700;
+  line-height: 0.85;
+  margin: 0 auto;
+  letter-spacing: -0.05em;
+  background: linear-gradient(180deg, #CBFC01 0%, #B8EB00 24%, rgba(184, 235, 0, 0.45) 58%, rgba(0, 59, 226, 0) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Poppins Bold Main Headline overlapping across the middle/lower part of 404 */
+.not-found-main-headline,
+.not-found-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(34px, 4.4vw, 58px);
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: -115px 0 0 0;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 4px 18px rgba(0, 59, 226, 0.4);
+}
+
+/* Satoshi Small Subtitle */
+.not-found-subtext,
+.not-found-desc {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(14px, 1.8vw, 17px);
+  font-weight: 400;
+  color: #DBEAFE;
+  margin: 26px auto 26px auto;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 580px;
+  position: relative;
+  z-index: 2;
+}
+
+.not-found-btn-wrapper,
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Lime Pill Button: Back to Home */
+.not-found-home-btn,
+.nf-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #CBFC01;
+  color: #0A0F1D;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 32px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.not-found-home-btn:hover,
+.nf-home-btn:hover {
+  background-color: #B8E600;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .not-found-page-wrapper {
+    padding: 120px 16px 70px 16px;
+    min-height: auto;
+  }
+
+  .not-found-big-number {
+    font-size: clamp(130px, 32vw, 220px);
+  }
+
+  .not-found-main-headline {
+    margin-top: -65px;
+    font-size: clamp(26px, 6vw, 36px);
+  }
+
+  .not-found-subtext {
+    font-size: 14px;
+    margin: 20px auto 24px auto;
+  }
+}

@@ -1,0 +1,433 @@
+/* ============================================================
+   HERO SECTION (Figma Hero_Frame: width: 1440, height: 1024, background: #003BE2)
+   ============================================================ */
+.hero-section {
+  background-color: #003BE2;
+  position: relative;
+  overflow: hidden;
+  height: 1024px;
+  min-height: 1024px;
+  color: #ffffff;
+  width: 100%;
+}
+
+/* 1440x1024 Centered Hero Canvas matching Figma Frame */
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1440px;
+  height: 1024px;
+  pointer-events: auto;
+}
+
+/* 3D Decorative Doodles matching Figma */
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-decor {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Top-Left Lime Squiggle - level with headline */
+.decor-top-left {
+  top: 170px;
+  left: 0px;
+  width: 175px;
+  height: auto;
+  z-index: 3;
+}
+
+/* Mid-Left White Zigzag - in the pocket between squiggle, torus, and UI badge */
+.decor-mid-left {
+  top: 390px;
+  left: 175px;
+  width: 105px;
+  height: auto;
+  transform: rotate(-22deg);
+  z-index: 3;
+}
+
+/* Lower-Left Large White 3D Torus - dominating bottom-left */
+.decor-torus {
+  bottom: -20px;
+  left: -20px;
+  top: auto;
+  width: 380px;
+  height: auto;
+  object-fit: contain;
+  transform: rotate(-18deg);
+  opacity: 1;
+  z-index: 4;
+}
+
+/* Top-Right Neon Cylinder - level with headline on right edge */
+.decor-cylinder {
+  top: 170px;
+  right: 10px;
+  width: 155px;
+  height: auto;
+  z-index: 3;
+}
+
+/* Mid-Right White 3D Cone / Pyramid - right of search button and learning badge */
+.decor-cone {
+  top: 390px;
+  right: 175px;
+  left: auto;
+  width: 115px;
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
+  z-index: 4;
+}
+
+/* Bottom-Right White Coil - dominating bottom-right corner */
+.decor-bottom-right {
+  bottom: -15px;
+  right: -10px;
+  top: auto;
+  width: 230px;
+  height: auto;
+  transform: rotate(-10deg);
+  z-index: 4;
+}
+
+/* Hero Headings matching Figma */
+.hero-content {
+  position: absolute;
+  top: 115px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 935px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 5;
+}
+
+.hero-title {
+  width: 100%;
+  max-width: 935px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 58px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin: 0 auto 14px auto;
+  color: #FFFFFF;
+}
+
+.hero-subtitle {
+  width: auto;
+  max-width: 820px;
+  font-family: 'Satoshi', var(--font-body), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: center;
+  color: #E5E6E8;
+  margin: 0 auto 24px auto;
+}
+
+/* Search Bar matching Figma screenshot */
+.hero-search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.hero-search-form .search-input-pill,
+.search-input-pill {
+  display: flex;
+  align-items: center;
+  width: 461px;
+  height: 52px;
+  transform: rotate(0deg);
+  opacity: 1;
+  gap: 8px;
+  border-radius: 24px;
+  padding-top: 12px;
+  padding-right: 24px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.search-input-pill input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  width: 100%;
+  font-weight: 400;
+}
+
+.search-input-pill input::placeholder {
+  color: #94a3b8;
+}
+
+.search-lime-btn {
+  background-color: var(--neon-lime);
+  color: #0a0f1d;
+  font-weight: 700;
+  font-size: 0.95rem;
+  height: 52px;
+  padding: 0 32px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 25px rgba(204, 255, 0, 0.35);
+}
+
+.search-lime-btn:hover {
+  background-color: var(--neon-lime-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(204, 255, 0, 0.45);
+}
+
+/* Hero Visual Stage */
+.hero-stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Figma Ellips7 7:
+   width: 1149;
+   height: 1149;
+   angle: 0 deg;
+   opacity: 1;
+   top: 582px;
+   left: 145px;
+   border-width: 320px;
+   border: 320px solid #CBFC01;
+*/
+.hero-ellipse-7 {
+  position: absolute;
+  width: 1149px;
+  height: 1149px;
+  top: 582px;
+  left: 145px;
+  border-width: 320px;
+  border: 320px solid #CBFC01;
+  border-radius: 50%;
+  box-sizing: border-box;
+  opacity: 1;
+  transform: rotate(0deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Figma Hero Student Cutout Image (Clean without shadow):
+   width: 578;
+   height: 541;
+   angle: 0 deg;
+   opacity: 1;
+   top: 512px;
+   left: 431px;
+*/
+.hero-student-cutout-img {
+  position: absolute;
+  width: 578px;
+  height: 541px;
+  top: 512px;
+  left: 431px;
+  opacity: 1;
+  transform: rotate(0deg);
+  box-shadow: none;
+  filter: none;
+  object-fit: contain;
+  object-position: bottom center;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+/* Hero Floating Badges matching Figma screenshot */
+.hero-badge {
+  position: absolute;
+  background: #ffffff;
+  color: var(--text-dark);
+  border-radius: 16px;
+  padding: 14px 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  text-align: left;
+  pointer-events: auto;
+}
+
+/* Badge 1: UI/UX Design (Left of student's face) */
+.badge-ui-design {
+  top: 615px;
+  left: 245px;
+}
+
+.badge-category-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 3px;
+}
+
+.badge-category-stats {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+/* Badge 2: Learning Progress 55% (Right of student's face) */
+.badge-learning-progress {
+  top: 625px;
+  left: 955px;
+  width: 200px;
+}
+
+.badge-progress-header {
+  margin-bottom: 4px;
+}
+
+.badge-progress-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.badge-progress-val {
+  font-family: var(--font-heading);
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 8px;
+  background-color: #f1f5f9;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--electric-lime-400, #ccff00);
+  background-color: #ccff00;
+  border-radius: var(--radius-full);
+  transition: width 1s ease-in-out;
+}
+
+/* Badge 3: Happy Students 4.5 (Bottom-Left) */
+.badge-bottom-left {
+  top: 815px;
+  left: 220px;
+  width: 258px;
+}
+
+.badge-text-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.badge-students-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.rating-score {
+  font-weight: 800;
+  color: #0f172a;
+  font-size: 0.9rem;
+}
+
+.rating-reviews {
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+.rating-star {
+  color: #f59e0b;
+  font-size: 0.85rem;
+}
+
+.badge-avatars-row {
+  display: flex;
+  align-items: center;
+}
+
+.happy-students-avatars-img {
+  width: 210px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Happy Students Avatar Stack (7 Photos + 2K+ Neon Lime Badge) */
+.happy-students-stack {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  user-select: none;
+}
+
+.happy-students-avatar-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  margin-left: -9px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.happy-students-avatar-img:first-child {
+  margin-left: 0;
+}
+
+.happy-students-count {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #CBFC01;
+  color: #111827;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -9px;
+  flex-shrink: 0;
+}

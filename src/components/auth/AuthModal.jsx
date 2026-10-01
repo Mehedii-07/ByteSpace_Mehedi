@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Mail, Lock, User, ArrowRight, Check } from 'lucide-react';
-import { NeonSquiggle, Torus3D } from './DecorativeElements';
+import { NeonSquiggle, Torus3D } from '../landing/DecorativeElements';
 
 export const AuthModal = ({ isOpen, onClose, initialMode = 'signin', onAuthSuccess, onOpen404 }) => {
   const [mode, setMode] = useState(initialMode); // 'signin' or 'signup'

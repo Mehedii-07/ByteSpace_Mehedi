@@ -40,8 +40,8 @@ export const Footer = ({ onOpen404, onNavigateCreators, onNavigateHome, onNaviga
         <div className="footer-top-grid">
           {/* Brand & Newsletter Column */}
           <div className="footer-brand-col">
-            <a 
-              href="#home" 
+            <a
+              href="#home"
               className="footer-brand-logo"
               onClick={(e) => {
                 e.preventDefault();
@@ -49,11 +49,11 @@ export const Footer = ({ onOpen404, onNavigateCreators, onNavigateHome, onNaviga
                 else window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
-              <img 
-                src="/images/bytespace-logo@2x.png" 
+              <img
+                src="/images/bytespace-logo@2x.png"
                 srcSet="/images/bytespace-logo.png 1x, /images/bytespace-logo@2x.png 2x, /images/bytespace-logo@4x.png 4x"
-                alt="ByteSpace Logo" 
-                className="footer-logo-icon" 
+                alt="ByteSpace Logo"
+                className="footer-logo-icon"
               />
               <span className="brand-name-dark">
                 ByteSpace
@@ -67,16 +67,16 @@ export const Footer = ({ onOpen404, onNavigateCreators, onNavigateHome, onNaviga
             {/* Newsletter Subscription Box */}
             <form className="footer-newsletter-form" onSubmit={handleSubscribe}>
               <div className="newsletter-input-wrap">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
+                <input
+                  type="email"
+                  placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   aria-label="Email address for newsletter"
                 />
                 <button type="submit" className="newsletter-submit-btn">
-                  {subscribed ? 'Subscribed!' : 'Subscribe'}
+                  {subscribed ? 'Subscribed!' : 'Search'}
                 </button>
               </div>
             </form>
@@ -106,8 +106,8 @@ export const Footer = ({ onOpen404, onNavigateCreators, onNavigateHome, onNaviga
           <div className="footer-nav-col">
             <ul className="footer-links-list">
               <li>
-                <a 
-                  href="#courses" 
+                <a
+                  href="#courses"
                   onClick={(e) => {
                     e.preventDefault();
                     if (onNavigateCourses) onNavigateCourses();
@@ -118,8 +118,8 @@ export const Footer = ({ onOpen404, onNavigateCreators, onNavigateHome, onNaviga
                 </a>
               </li>
               <li>
-                <a 
-                  href="#courses" 
+                <a
+                  href="#courses"
                   onClick={(e) => {
                     e.preventDefault();
                     if (onNavigateCourses) onNavigateCourses();
@@ -139,11 +139,11 @@ export const Footer = ({ onOpen404, onNavigateCreators, onNavigateHome, onNaviga
           <div className="footer-nav-col">
             <ul className="footer-links-list">
               <li>
-                <a 
-                  href="#creator-profile" 
-                  onClick={(e) => { 
-                    e.preventDefault(); 
-                    if (onNavigateCreators) onNavigateCreators(); 
+                <a
+                  href="#creator-profile"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (onNavigateCreators) onNavigateCreators();
                   }}
                 >
                   Become a Creator

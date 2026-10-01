@@ -1,6 +1,15 @@
 import React from 'react';
 
 export const CtaBanner = ({ onJoinClick }) => {
+  const handleClick = (e) => {
+    if (onJoinClick) {
+      onJoinClick(e);
+    } else {
+      window.location.hash = '#register';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="cta" className="cta-section bg-grid-pattern">
       {/* Left Side 3D Decorations (Figma exact: width: 386.79px, height: 386.79px, left: -3.58px) */}
@@ -30,10 +39,10 @@ export const CtaBanner = ({ onJoinClick }) => {
             Experience the collaboration of numerous creators and an expanding selection of courses. Register now and become a part of a community comprising over 10,000 local and international creators. Utilize our Course Editor, and showcase your expertise by publishing your finest course on the ByteSpace Course Library.
           </p>
           <div className="cta-button-wrap">
-            <button 
+            <button
               type="button"
               className="cta-join-btn"
-              onClick={onJoinClick}
+              onClick={handleClick}
             >
               Join as Creator
             </button>

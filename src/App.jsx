@@ -97,9 +97,7 @@ export function App() {
   };
 
   const handleJoinTutor = () => {
-    showToast('Welcome future instructor! Creator registration opened.');
-    setAuthMode('signup');
-    setAuthModalOpen(true);
+    handleNavigateRegister();
   };
 
   const handleOpenAuth = (mode = 'signin') => {
@@ -167,14 +165,14 @@ export function App() {
 
       {/* Login View (Dedicated Fullscreen Artboard) */}
       {currentView === 'login' ? (
-        <LoginPage 
+        <LoginPage
           onNavigateHome={handleNavigateHome}
           onNavigateRegister={handleNavigateRegister}
           onAuthSuccess={handleAuthSuccess}
           onOpen404={handleOpen404}
         />
       ) : currentView === 'register' ? (
-        <RegisterPage 
+        <RegisterPage
           onNavigateHome={handleNavigateHome}
           onNavigateLogin={handleNavigateLogin}
           onAuthSuccess={handleAuthSuccess}
@@ -184,7 +182,7 @@ export function App() {
       ) : (
         <>
           {/* Navigation */}
-          <Navbar 
+          <Navbar
             cartCount={cartItems.length}
             currentUser={currentUser}
             onOpenCart={() => setIsCartOpen(true)}
@@ -212,7 +210,7 @@ export function App() {
               <PartnerLogos />
 
               {/* Courses Catalog Section */}
-              <CoursesCatalog 
+              <CoursesCatalog
                 searchQuery={searchQuery}
                 onSelectCourse={(course) => handleOpenCourseDetail(course)}
                 onAddToCart={handleAddToCart}
@@ -229,7 +227,7 @@ export function App() {
               <CreateAndManage />
 
               {/* CTA Banner: Unlock Your Potential as a Creator */}
-              <CtaBanner onJoinClick={handleJoinTutor} />
+              <CtaBanner onJoinClick={handleNavigateRegister} />
 
               {/* Community Testimonials */}
               <CommunityTestimonials />
@@ -238,7 +236,7 @@ export function App() {
 
           {currentView === 'courses' && (
             <main>
-              <SearchPage 
+              <SearchPage
                 initialSearchQuery={searchQuery}
                 onSelectCourse={(course) => handleOpenCourseDetail(course)}
                 onAddToCart={handleAddToCart}
@@ -249,7 +247,7 @@ export function App() {
 
           {currentView === 'creator-profile' && (
             <main>
-              <CreatorProfilePage 
+              <CreatorProfilePage
                 onSelectCourse={handleOpenCourseDetail}
                 onAddToCart={handleAddToCart}
               />
@@ -258,7 +256,7 @@ export function App() {
 
           {currentView === 'course-detail' && (
             <main>
-              <CourseDetailPage 
+              <CourseDetailPage
                 course={selectedDetailCourse}
                 onBack={() => {
                   setCurrentView('courses');
@@ -272,14 +270,14 @@ export function App() {
 
           {currentView === '404' && (
             <main>
-              <NotFoundPage 
+              <NotFoundPage
                 onGoHome={handleNavigateHome}
               />
             </main>
           )}
 
           {/* Footer */}
-          <Footer 
+          <Footer
             onNavigateCreators={handleNavigateCreators}
             onNavigateHome={handleNavigateHome}
             onNavigateCourses={handleNavigateCourses}
@@ -289,7 +287,7 @@ export function App() {
       )}
 
       {/* Auth Modal (Sign In / Sign Up) */}
-      <AuthModal 
+      <AuthModal
         isOpen={authModalOpen}
         onClose={() => setAuthModalOpen(false)}
         initialMode={authMode}
@@ -298,7 +296,7 @@ export function App() {
       />
 
       {/* Cart Drawer */}
-      <CartDrawer 
+      <CartDrawer
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cartItems={cartItems}
